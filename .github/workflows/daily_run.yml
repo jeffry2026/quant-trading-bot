@@ -1,0 +1,39 @@
+name: Esecuzione Giornaliera Trading Bot
+
+on:
+  schedule:
+    # Esegue dal lunedì al venerdì alle 20:15 UTC (22:15 CET ora italiana)
+    - cron: '15 20 * * 1-5'
+  workflow_dispatch: # Permette di avviarlo a mano in qualsiasi momento
+
+jobs:
+  run-trading-bot:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write # Permesso per salvare le modifiche a paper_portfolio.json
+
+    steps:
+      - name: Scarica il codice del repository
+        uses: actions/checkout@v4
+
+      - name: Configura Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installa le dipendenze
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Esegui il Paper Trading Bot
+        run: python paper_trading.py
+
+      - name: Salva l'aggiornamento del portafoglio
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add paper_portfolio.json
+          git commit -m "Auto-update portafoglio [skip ci]" || echo "Nessuna modifica al file"
+          git push
