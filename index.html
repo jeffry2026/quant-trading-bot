@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calendario Rendimenti Trading Bot</title>
+  <title>Dashboard Quantitativa - Rendimenti & Posizioni</title>
+  <!-- Libreria Chart.js per il grafico -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -15,29 +17,32 @@
       flex-direction: column;
       align-items: center;
     }
-    h1 { margin-bottom: 5px; font-size: 24px; }
+    h1 { margin-bottom: 4px; font-size: 26px; }
     .subtitle { color: #8b949e; margin-bottom: 25px; font-size: 14px; }
-    .calendar-container {
+    
+    .card {
       background: #161b22;
       border: 1px solid #30363d;
       border-radius: 10px;
       padding: 20px;
-      max-width: 650px;
+      max-width: 750px;
       width: 100%;
       box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      margin-bottom: 25px;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 8px;
-    }
-    .header-day {
-      text-align: center;
+    .card-title {
+      font-size: 16px;
       font-weight: 600;
-      color: #8b949e;
-      font-size: 13px;
-      padding-bottom: 8px;
+      color: #f0f6fc;
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+
+    /* Griglia Calendario */
+    .grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+    .header-day { text-align: center; font-weight: 600; color: #8b949e; font-size: 13px; padding-bottom: 8px; }
     .day-cell {
       height: 65px;
       background: #21262d;
@@ -47,45 +52,117 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      transition: transform 0.1s ease;
+      cursor: pointer;
+      transition: transform 0.1s ease, border-color 0.15s ease;
     }
-    .day-cell:hover { transform: scale(1.05); }
+    .day-cell:hover { transform: scale(1.04); border-color: #58a6ff !important; }
+    .day-cell.selected { border: 2px solid #58a6ff !important; }
     .empty-cell { height: 65px; }
     .day-num { font-size: 13px; font-weight: bold; margin-bottom: 3px; }
     .pnl-val { font-size: 11px; font-weight: 600; }
     
-    /* Colori */
     .profit { background: #238636 !important; border-color: #2ea043 !important; color: #ffffff; }
     .loss { background: #da3633 !important; border-color: #f85149 !important; color: #ffffff; }
-    .neutral { background: #30363d; color: #8b949e; }
+    .neutral { background: #21262d; color: #8b949e; }
+
+    /* Tabella Posizioni */
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px; }
+    th, td { text-align: left; padding: 10px; border-bottom: 1px solid #30363d; }
+    th { color: #8b949e; font-weight: 600; }
+    .pnl-green { color: #3fb950; font-weight: bold; }
+    .pnl-red { color: #f85149; font-weight: bold; }
+
+    .summary-badge {
+      font-size: 13px;
+      background: #21262d;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid #30363d;
+      color: #8b949e;
+    }
+    .summary-badge span { color: #f0f6fc; font-weight: bold; }
   </style>
 </head>
 <body>
 
-  <h1>Rendimenti Portafoglio Bot</h1>
-  <div class="subtitle" id="currentMonthYear">Caricamento...</div>
+  <h1>Dashboard Quantitativa</h1>
+  <div class="subtitle" id="currentDateSub">Monitoraggio Strategia Trend-Following</div>
 
-  <div class="calendar-container">
+  <!-- 1. GRAFICO RENDIMENTO -->
+  <div class="card">
+    <div class="card-title">
+      <span>Andamento Capitale (Equity Curve)</span>
+      <div class="summary-badge" id="equityBadge">Capitale: <span>$100,000.00</span></div>
+    </div>
+    <canvas id="equityChart" height="110"></canvas>
+  </div>
+
+  <!-- 2. CALENDARIO MENSILE -->
+  <div class="card">
+    <div class="card-title">
+      <span id="calendarTitle">Calendario Rendimenti</span>
+      <span style="font-size: 12px; color: #8b949e;">Clicca su un giorno per vedere i titoli</span>
+    </div>
     <div class="grid" id="calendarGrid"></div>
   </div>
 
+  <!-- 3. DETTAGLIO TITOLI INVESTITI PER QUEL GIORNO -->
+  <div class="card">
+    <div class="card-title">
+      <span id="detailTitle">Posizioni del Giorno</span>
+      <div class="summary-badge" id="dayPnlBadge">PnL: <span>0.00%</span></div>
+    </div>
+    <div id="positionsContainer">
+      <table id="positionsTable">
+        <thead>
+          <tr>
+            <th>Ticker</th>
+            <th>Quote</th>
+            <th>Prezzo Acquisto</th>
+            <th>Prezzo Chiusura</th>
+            <th>Valore Totale</th>
+            <th>Rendimento</th>
+          </tr>
+        </thead>
+        <tbody id="positionsBody">
+          <tr><td colspan="6" style="text-align: center; color: #8b949e;">Seleziona un giorno per visualizzare i dettagli.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
   <script>
-    async function initCalendar() {
-      let data = {};
+    let globalHistory = {};
+    let equityChartInstance = null;
+
+    async function initDashboard() {
       try {
         const response = await fetch('daily_history.json?nocache=' + new Date().getTime());
         if (response.ok) {
-          data = await response.json();
+          globalHistory = await response.json();
         }
       } catch (e) {
-        console.log("Nessun dato ancora disponibile");
+        console.log("File storico non ancora disponibile");
       }
 
+      setupCalendar();
+      setupChart();
+
+      // Seleziona in automatico l'ultimo giorno registrato se presente
+      const dates = Object.keys(globalHistory).sort();
+      if (dates.length > 0) {
+        showDayDetails(dates[dates.length - 1]);
+      }
+    }
+
+    function setupCalendar() {
       const now = new Date();
       const months = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
-      document.getElementById('currentMonthYear').innerText = `${months[now.getMonth()]} ${now.getFullYear()}`;
+      document.getElementById('calendarTitle').innerText = `Calendario Rendimenti - ${months[now.getMonth()]} ${now.getFullYear()}`;
 
       const grid = document.getElementById('calendarGrid');
+      grid.innerHTML = '';
+      
       const dayNames = ["Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"];
       dayNames.forEach(d => {
         const div = document.createElement('div');
@@ -96,26 +173,25 @@
 
       const year = now.getFullYear();
       const month = now.getMonth();
-      const firstDayIndex = new Date(year, month, 1).getDay(); // 0 = Domenica
+      const firstDayIndex = new Date(year, month, 1).getDay();
       const daysOffset = (firstDayIndex === 0 ? 6 : firstDayIndex - 1);
       const totalDays = new Date(year, month + 1, 0).getDate();
 
-      // Spazi vuoti prima dell'inizio del mese
       for (let i = 0; i < daysOffset; i++) {
         const empty = document.createElement('div');
         empty.className = 'empty-cell';
         grid.appendChild(empty);
       }
 
-      // Giorni del mese
       for (let day = 1; day <= totalDays; day++) {
         const dayStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
         const cell = document.createElement('div');
         cell.className = 'day-cell';
+        cell.id = `cell-${dayStr}`;
 
         let pnlText = "-";
-        if (data[dayStr]) {
-          const ret = data[dayStr].return_pct;
+        if (globalHistory[dayStr]) {
+          const ret = globalHistory[dayStr].return_pct;
           pnlText = (ret >= 0 ? "+" : "") + ret.toFixed(2) + "%";
           cell.classList.add(ret >= 0 ? 'profit' : 'loss');
         } else {
@@ -126,10 +202,109 @@
           <div class="day-num">${day}</div>
           <div class="pnl-val">${pnlText}</div>
         `;
+
+        cell.onclick = () => {
+          document.querySelectorAll('.day-cell').forEach(c => c.classList.remove('selected'));
+          cell.classList.add('selected');
+          showDayDetails(dayStr);
+        };
+
         grid.appendChild(cell);
       }
     }
-    initCalendar();
+
+    function setupChart() {
+      const dates = Object.keys(globalHistory).sort();
+      const labels = dates.length > 0 ? dates : ["Inizio"];
+      const values = dates.length > 0 ? dates.map(d => globalHistory[d].equity) : [100000];
+
+      if (dates.length > 0) {
+        const lastEquity = values[values.length - 1];
+        document.getElementById('equityBadge').innerHTML = `Capitale: <span>$${lastEquity.toLocaleString('en-US', {minimumFractionDigits: 2})}</span>`;
+      }
+
+      const ctx = document.getElementById('equityChart').getContext('2d');
+      if (equityChartInstance) equityChartInstance.destroy();
+
+      equityChartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Valore Portafoglio ($)',
+            data: values,
+            borderColor: '#58a6ff',
+            backgroundColor: 'rgba(88, 166, 255, 0.1)',
+            fill: true,
+            tension: 0.25,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => ` $${ctx.parsed.y.toLocaleString('en-US', {minimumFractionDigits: 2})}`
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: { color: '#21262d' },
+              ticks: { color: '#8b949e', font: { size: 11 } }
+            },
+            y: {
+              grid: { color: '#21262d' },
+              ticks: {
+                color: '#8b949e',
+                font: { size: 11 },
+                callback: (val) => '$' + val.toLocaleString()
+              }
+            }
+          }
+        }
+      });
+    }
+
+    function showDayDetails(dateStr) {
+      const dayData = globalHistory[dateStr];
+      const tbody = document.getElementById('positionsBody');
+      const title = document.getElementById('detailTitle');
+      const badge = document.getElementById('dayPnlBadge');
+
+      title.innerText = `Posizioni del ${dateStr}`;
+
+      if (!dayData || !dayData.positions || dayData.positions.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: #8b949e;">Nessun dato registrato per questa data.</td></tr>`;
+        badge.innerHTML = `PnL: <span>-</span>`;
+        return;
+      }
+
+      const ret = dayData.return_pct;
+      const sign = ret >= 0 ? "+" : "";
+      badge.innerHTML = `PnL Giornaliero: <span style="color: ${ret >= 0 ? '#3fb950' : '#f85149'}">${sign}${ret.toFixed(2)}%</span>`;
+
+      tbody.innerHTML = dayData.positions.map(p => {
+        const pnlColorClass = p.pnl_pct >= 0 ? 'pnl-green' : 'pnl-red';
+        const pnlSign = p.pnl_pct >= 0 ? '+' : '';
+        return `
+          <tr>
+            <td><strong>${p.ticker}</strong></td>
+            <td>${p.shares}</td>
+            <td>$${p.entry_price.toFixed(2)}</td>
+            <td>$${p.current_price.toFixed(2)}</td>
+            <td>$${p.total_value.toLocaleString('en-US', {minimumFractionDigits: 2})}</td>
+            <td class="${pnlColorClass}">${pnlSign}${p.pnl_pct.toFixed(2)}% (${pnlSign}$${p.pnl_usd.toFixed(2)})</td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    initDashboard();
   </script>
 </body>
 </html>
