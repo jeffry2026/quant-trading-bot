@@ -41,10 +41,10 @@ class PaperTrader:
         else:
             print("[+] Nuovo portafoglio virtuale.")
 
-    def save_state(self, current_equity: float):
+    def save_state(self, current_equity: float, current_prices: dict[str, float]):
         today_str = datetime.now().strftime("%Y-%m-%d")
         
-        # 1. Salva lo stato delle posizioni
+        # 1. Salva lo stato istantaneo del portafoglio
         payload = {
             "cash": self.cash,
             "positions": {t: asdict(pos) for t, pos in self.positions.items()},
@@ -53,7 +53,24 @@ class PaperTrader:
         with open(PORTFOLIO_FILE, "w") as f:
             json.dump(payload, f, indent=4)
             
-        # 2. Aggiorna lo storico giornaliero per il calendario
+        # 2. Prepara il dettaglio delle posizioni per la dashboard
+        positions_detail = []
+        for ticker, pos in self.positions.items():
+            price = current_prices.get(ticker, pos.entry_price)
+            pos_val = pos.shares * price
+            pnl_pct = ((price - pos.entry_price) / pos.entry_price) * 100 if pos.entry_price > 0 else 0.0
+            pnl_usd = (price - pos.entry_price) * pos.shares
+            positions_detail.append({
+                "ticker": ticker,
+                "shares": pos.shares,
+                "entry_price": round(pos.entry_price, 2),
+                "current_price": round(price, 2),
+                "pnl_pct": round(pnl_pct, 2),
+                "pnl_usd": round(pnl_usd, 2),
+                "total_value": round(pos_val, 2)
+            })
+
+        # 3. Aggiorna lo storico giornaliero completo
         history = {}
         if os.path.exists(HISTORY_FILE):
             try:
@@ -62,11 +79,9 @@ class PaperTrader:
             except Exception:
                 history = {}
 
-        # Prendi l'ultimo valore registrato per calcolare la percentuale di oggi
         prev_equity = self.initial_cash
         if history:
             dates = sorted(history.keys())
-            # se oggi e gia presente, prendi quello precedente
             valid_dates = [d for d in dates if d != today_str]
             if valid_dates:
                 prev_equity = history[valid_dates[-1]]["equity"]
@@ -75,7 +90,9 @@ class PaperTrader:
 
         history[today_str] = {
             "equity": round(current_equity, 2),
-            "return_pct": round(daily_pct, 2)
+            "cash": round(self.cash, 2),
+            "return_pct": round(daily_pct, 2),
+            "positions": positions_detail
         }
 
         with open(HISTORY_FILE, "w") as f:
@@ -119,11 +136,13 @@ class PaperTrader:
     def generate_and_run(self, watchlist: list[str]):
         portfolio_val = self.cash
         analysis = {}
+        current_prices = {}
 
         for t in watchlist:
             info = self.analyze_ticker(t)
             if info:
                 analysis[t] = info
+                current_prices[t] = info["current_price"]
                 if t in self.positions:
                     portfolio_val += self.positions[t].shares * info["current_price"]
 
@@ -200,13 +219,12 @@ class PaperTrader:
                 self.positions[ticker] = Position(shares=shares, entry_price=price, peak_price=price, entry_date=datetime.now().strftime("%Y-%m-%d"))
                 print(f"[ACQUISTO] Eseguito acquisto di {shares} quote di {ticker}")
 
-        # Ricalcola l'equity finale dopo gli ordini
+        # Calcolo finale dell'equity
         final_equity = self.cash
         for t, p in self.positions.items():
-            if t in analysis:
-                final_equity += p.shares * analysis[t]["current_price"]
+            final_equity += p.shares * current_prices.get(t, p.entry_price)
 
-        self.save_state(final_equity)
+        self.save_state(final_equity, current_prices)
 
 
 if __name__ == "__main__":
