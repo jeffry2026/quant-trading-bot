@@ -34,6 +34,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add paper_portfolio.json
+          git add paper_portfolio.json daily_history.json
           git commit -m "Auto-update portafoglio [skip ci]" || echo "Nessuna modifica al file"
           git push
