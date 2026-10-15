@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendario Rendimenti Trading Bot</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #0d1117;
+      color: #e6edf3;
+      margin: 0;
+      padding: 30px 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 { margin-bottom: 5px; font-size: 24px; }
+    .subtitle { color: #8b949e; margin-bottom: 25px; font-size: 14px; }
+    .calendar-container {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 650px;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+    }
+    .header-day {
+      text-align: center;
+      font-weight: 600;
+      color: #8b949e;
+      font-size: 13px;
+      padding-bottom: 8px;
+    }
+    .day-cell {
+      height: 65px;
+      background: #21262d;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.1s ease;
+    }
+    .day-cell:hover { transform: scale(1.05); }
+    .empty-cell { height: 65px; }
+    .day-num { font-size: 13px; font-weight: bold; margin-bottom: 3px; }
+    .pnl-val { font-size: 11px; font-weight: 600; }
+    
+    /* Colori */
+    .profit { background: #238636 !important; border-color: #2ea043 !important; color: #ffffff; }
+    .loss { background: #da3633 !important; border-color: #f85149 !important; color: #ffffff; }
+    .neutral { background: #30363d; color: #8b949e; }
+  </style>
+</head>
+<body>
+
+  <h1>Rendimenti Portafoglio Bot</h1>
+  <div class="subtitle" id="currentMonthYear">Caricamento...</div>
+
+  <div class="calendar-container">
+    <div class="grid" id="calendarGrid"></div>
+  </div>
+
+  <script>
+    async function initCalendar() {
+      let data = {};
+      try {
+        const response = await fetch('daily_history.json?nocache=' + new Date().getTime());
+        if (response.ok) {
+          data = await response.json();
+        }
+      } catch (e) {
+        console.log("Nessun dato ancora disponibile");
+      }
+
+      const now = new Date();
+      const months = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
+      document.getElementById('currentMonthYear').innerText = `${months[now.getMonth()]} ${now.getFullYear()}`;
+
+      const grid = document.getElementById('calendarGrid');
+      const dayNames = ["Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"];
+      dayNames.forEach(d => {
+        const div = document.createElement('div');
+        div.className = 'header-day';
+        div.innerText = d;
+        grid.appendChild(div);
+      });
+
+      const year = now.getFullYear();
+      const month = now.getMonth();
+      const firstDayIndex = new Date(year, month, 1).getDay(); // 0 = Domenica
+      const daysOffset = (firstDayIndex === 0 ? 6 : firstDayIndex - 1);
+      const totalDays = new Date(year, month + 1, 0).getDate();
+
+      // Spazi vuoti prima dell'inizio del mese
+      for (let i = 0; i < daysOffset; i++) {
+        const empty = document.createElement('div');
+        empty.className = 'empty-cell';
+        grid.appendChild(empty);
+      }
+
+      // Giorni del mese
+      for (let day = 1; day <= totalDays; day++) {
+        const dayStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+        const cell = document.createElement('div');
+        cell.className = 'day-cell';
+
+        let pnlText = "-";
+        if (data[dayStr]) {
+          const ret = data[dayStr].return_pct;
+          pnlText = (ret >= 0 ? "+" : "") + ret.toFixed(2) + "%";
+          cell.classList.add(ret >= 0 ? 'profit' : 'loss');
+        } else {
+          cell.classList.add('neutral');
+        }
+
+        cell.innerHTML = `
+          <div class="day-num">${day}</div>
+          <div class="pnl-val">${pnlText}</div>
+        `;
+        grid.appendChild(cell);
+      }
+    }
+    initCalendar();
+  </script>
+</body>
+</html>
