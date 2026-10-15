@@ -7,6 +7,7 @@ import numpy as np
 import yfinance as yf
 
 PORTFOLIO_FILE = "paper_portfolio.json"
+HISTORY_FILE = "daily_history.json"
 
 @dataclass
 class Position:
@@ -38,9 +39,12 @@ class PaperTrader:
             except Exception as e:
                 print(f"[!] Errore lettura file stato: {e}. Inizializzazione nuovo conto.")
         else:
-            print("[+] Nessun file di stato trovato. Creato nuovo portafoglio virtuale.")
+            print("[+] Nuovo portafoglio virtuale.")
 
-    def save_state(self):
+    def save_state(self, current_equity: float):
+        today_str = datetime.now().strftime("%Y-%m-%d")
+        
+        # 1. Salva lo stato delle posizioni
         payload = {
             "cash": self.cash,
             "positions": {t: asdict(pos) for t, pos in self.positions.items()},
@@ -48,10 +52,37 @@ class PaperTrader:
         }
         with open(PORTFOLIO_FILE, "w") as f:
             json.dump(payload, f, indent=4)
-        print(f"[+] Stato portafoglio salvato su {PORTFOLIO_FILE}")
+            
+        # 2. Aggiorna lo storico giornaliero per il calendario
+        history = {}
+        if os.path.exists(HISTORY_FILE):
+            try:
+                with open(HISTORY_FILE, "r") as f:
+                    history = json.load(f)
+            except Exception:
+                history = {}
+
+        # Prendi l'ultimo valore registrato per calcolare la percentuale di oggi
+        prev_equity = self.initial_cash
+        if history:
+            dates = sorted(history.keys())
+            # se oggi e gia presente, prendi quello precedente
+            valid_dates = [d for d in dates if d != today_str]
+            if valid_dates:
+                prev_equity = history[valid_dates[-1]]["equity"]
+
+        daily_pct = ((current_equity - prev_equity) / prev_equity) * 100 if prev_equity > 0 else 0.0
+
+        history[today_str] = {
+            "equity": round(current_equity, 2),
+            "return_pct": round(daily_pct, 2)
+        }
+
+        with open(HISTORY_FILE, "w") as f:
+            json.dump(history, f, indent=4)
+        print(f"[+] Storico salvato su {HISTORY_FILE} (Oggi: {daily_pct:+.2f}%)")
 
     def analyze_ticker(self, ticker: str):
-        # Scarica storico sufficiente per SMA200 e slope
         raw = yf.download(ticker, period="2y", interval="1d", progress=False)
         if raw.empty:
             return None
@@ -61,22 +92,18 @@ class PaperTrader:
             df.columns = df.columns.get_level_values(0)
         df = df.dropna()
 
-        # ATR
         hl = df["High"] - df["Low"]
         hc = (df["High"] - df["Close"].shift(1)).abs()
         lc = (df["Low"] - df["Close"].shift(1)).abs()
         tr = pd.concat([hl, hc, lc], axis=1).max(axis=1)
         df["ATR"] = tr.rolling(14).mean().bfill()
 
-        # Trend & Donchian
         df["SMA200"] = df["Close"].rolling(200).mean()
         df["SMA200_slope"] = df["SMA200"] - df["SMA200"].shift(20)
         df["Max50"] = df["Close"].shift(1).rolling(50).max()
         df["SMA50"] = df["Close"].rolling(50).mean()
 
         last = df.iloc[-1]
-        prev = df.iloc[-2]
-
         return {
             "current_price": float(last["Close"]),
             "atr": float(last["ATR"]),
@@ -89,7 +116,7 @@ class PaperTrader:
             "below_sma50": bool(last["Close"] < last["SMA50"])
         }
 
-    def generate_signals(self, watchlist: list[str]):
+    def generate_and_run(self, watchlist: list[str]):
         portfolio_val = self.cash
         analysis = {}
 
@@ -121,10 +148,8 @@ class PaperTrader:
 
             action = "INATTIVO"
             reason = "Nessun segnale di trend"
-            target_shares = 0
 
             if pos is not None:
-                # Gestione posizione aperta
                 new_peak = max(pos.peak_price, price)
                 pos.peak_price = new_peak
                 stop_loss = new_peak - (atr * self.atr_mult)
@@ -142,66 +167,49 @@ class PaperTrader:
                     pnl_pct = ((price - pos.entry_price) / pos.entry_price) * 100
                     reason = f"PnL: {pnl_pct:+.2f}% | Stop: ${stop_loss:.2f}"
             else:
-                # Valutazione nuovo ingresso
                 if info["breakout"] and info["bull_regime"]:
                     if len(self.positions) < self.max_positions and self.cash >= price:
                         shares_to_buy = int(slot_size // price)
                         total_cost = shares_to_buy * price
                         if total_cost <= self.cash and shares_to_buy > 0:
                             action = "COMPRA"
-                            reason = f"Breakout Donchian 50d + Trend SMA200 ({shares_to_buy} quote)"
+                            reason = f"Breakout Donchian 50d ({shares_to_buy} quote)"
                             orders.append((t, "BUY", shares_to_buy, price))
                         else:
                             action = "ATTENDI"
-                            reason = "Fondi insufficienti per allocazione"
+                            reason = "Fondi insufficienti"
                     else:
                         action = "ATTENDI"
                         reason = "Slot di portafoglio esauriti"
                 else:
-                    if not info["bull_regime"]:
-                        reason = "Sotto SMA200 o pendenza ribassista"
-                    else:
-                        reason = "Sotto il massimo a 50 giorni"
+                    reason = "Sotto i massimi o trend negativo"
 
             pos_desc = f"{pos.shares} quote" if pos else "Liquido"
             print(f"{t:<7} ${price:<9.2f} {pos_desc:<12} {action:<10} {reason}")
 
         print("="*80)
-        return orders
 
-    def execute_orders(self, orders: list):
-        if not orders:
-            print("\nNessun ordine operativo da eseguire.")
-            return
-
-        print("\n--- ESECUZIONE SIMULATA ORDINI ---")
+        # Esecuzione ordini se presenti
         for ticker, side, shares, price in orders:
             if side == "SELL":
-                revenue = shares * price
-                self.cash += revenue
+                self.cash += shares * price
                 del self.positions[ticker]
-                print(f"[VENDITA] Eseguita vendita di {shares} quote di {ticker} a ${price:.2f} (+${revenue:,.2f})")
+                print(f"[VENDITA] Eseguita vendita di {shares} quote di {ticker}")
             elif side == "BUY":
-                cost = shares * price
-                self.cash -= cost
-                self.positions[ticker] = Position(
-                    shares=shares,
-                    entry_price=price,
-                    peak_price=price,
-                    entry_date=datetime.now().strftime("%Y-%m-%d")
-                )
-                print(f"[ACQUISTO] Eseguito acquisto di {shares} quote di {ticker} a ${price:.2f} (-${cost:,.2f})")
-        
-        self.save_state()
+                self.cash -= shares * price
+                self.positions[ticker] = Position(shares=shares, entry_price=price, peak_price=price, entry_date=datetime.now().strftime("%Y-%m-%d"))
+                print(f"[ACQUISTO] Eseguito acquisto di {shares} quote di {ticker}")
+
+        # Ricalcola l'equity finale dopo gli ordini
+        final_equity = self.cash
+        for t, p in self.positions.items():
+            if t in analysis:
+                final_equity += p.shares * analysis[t]["current_price"]
+
+        self.save_state(final_equity)
 
 
 if __name__ == "__main__":
     watchlist = ["AAPL", "NVDA", "XLE", "GLD", "XLV"]
     bot = PaperTrader(initial_cash=100_000.0, max_positions=5, atr_mult=2.5)
-    
-    orders = bot.generate_signals(watchlist)
-    if orders:
-        bot.execute_orders(orders)
-    else:
-        # Se non ci sono nuovi ordini, salva comunque l'aggiornamento dei peak_prices
-        bot.save_state()
+    bot.generate_and_run(watchlist)
