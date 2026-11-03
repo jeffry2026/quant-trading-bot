@@ -440,5 +440,30 @@
                 "total_value": 20698.16
             }
         ]
+    },
+    "2026-11-03": {
+        "equity": 99864.92,
+        "cash": 59574.57,
+        "return_pct": -0.64,
+        "positions": [
+            {
+                "ticker": "XLE",
+                "shares": 295,
+                "entry_price": 67.63,
+                "current_price": 66.74,
+                "pnl_pct": -1.32,
+                "pnl_usd": -264.02,
+                "total_value": 19686.83
+            },
+            {
+                "ticker": "XLV",
+                "shares": 112,
+                "entry_price": 177.19,
+                "current_price": 183.96,
+                "pnl_pct": 3.82,
+                "pnl_usd": 758.24,
+                "total_value": 20603.52
+            }
+        ]
     }
 }
