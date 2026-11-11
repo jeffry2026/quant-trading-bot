@@ -590,5 +590,30 @@
                 "total_value": 19529.44
             }
         ]
+    },
+    "2026-11-11": {
+        "equity": 99821.04,
+        "cash": 58743.36,
+        "return_pct": 0.38,
+        "positions": [
+            {
+                "ticker": "XLV",
+                "shares": 112,
+                "entry_price": 177.19,
+                "current_price": 188.95,
+                "pnl_pct": 6.64,
+                "pnl_usd": 1317.12,
+                "total_value": 21162.4
+            },
+            {
+                "ticker": "AAPL",
+                "shares": 56,
+                "entry_price": 349.51,
+                "current_price": 355.63,
+                "pnl_pct": 1.75,
+                "pnl_usd": 342.72,
+                "total_value": 19915.28
+            }
+        ]
     }
 }
