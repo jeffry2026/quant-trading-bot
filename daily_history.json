@@ -813,5 +813,21 @@
                 "total_value": 19827.92
             }
         ]
+    },
+    "2026-11-26": {
+        "equity": 98531.36,
+        "cash": 78618.88,
+        "return_pct": 0.09,
+        "positions": [
+            {
+                "ticker": "AAPL",
+                "shares": 56,
+                "entry_price": 349.51,
+                "current_price": 355.58,
+                "pnl_pct": 1.74,
+                "pnl_usd": 339.92,
+                "total_value": 19912.48
+            }
+        ]
     }
 }
