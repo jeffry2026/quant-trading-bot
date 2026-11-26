@@ -1,0 +1,6846 @@
+{
+  "last_updated": "2026-11-25",
+  "initial_capital": 100000.0,
+  "strategies_meta": {
+    "trend_following": "1. Trend Following (Donchian 50d)",
+    "mean_reversion": "2. Mean Reversion (RSI-2)",
+    "vol_breakout": "3. Volatility Breakout (Bollinger)",
+    "risk_parity": "4. Risk Parity (1/ATR)",
+    "rel_momentum": "5. Momentum Relativo (Top 2)",
+    "ensemble_50_50": "6. Ensemble 50/50 (Trend + Reversion)",
+    "buy_and_hold": "7. Buy & Hold (5 Asset)",
+    "sp500": "Benchmark S&P 500 (SPY)"
+  },
+  "summary": {
+    "trend_following": {
+      "name": "1. Trend Following (Donchian 50d)",
+      "gross_equity": 98150.31,
+      "final_equity": 98101.22,
+      "gross_return_pct": -1.85,
+      "total_return_pct": -1.9,
+      "total_fees_usd": 49.09,
+      "fee_impact_pct": 0.049,
+      "trades_count": 7
+    },
+    "mean_reversion": {
+      "name": "2. Mean Reversion (RSI-2)",
+      "gross_equity": 99305.51,
+      "final_equity": 99065.57,
+      "gross_return_pct": -0.69,
+      "total_return_pct": -0.93,
+      "total_fees_usd": 239.94,
+      "fee_impact_pct": 0.24,
+      "trades_count": 34
+    },
+    "vol_breakout": {
+      "name": "3. Volatility Breakout (Bollinger)",
+      "gross_equity": 100000.0,
+      "final_equity": 100000.0,
+      "gross_return_pct": 0.0,
+      "total_return_pct": 0.0,
+      "total_fees_usd": 0.0,
+      "fee_impact_pct": 0.0,
+      "trades_count": 0
+    },
+    "risk_parity": {
+      "name": "4. Risk Parity (1/ATR)",
+      "gross_equity": 92312.46,
+      "final_equity": 92209.03,
+      "gross_return_pct": -7.69,
+      "total_return_pct": -7.79,
+      "total_fees_usd": 103.43,
+      "fee_impact_pct": 0.103,
+      "trades_count": 15
+    },
+    "rel_momentum": {
+      "name": "5. Momentum Relativo (Top 2)",
+      "gross_equity": 100299.89,
+      "final_equity": 100197.18,
+      "gross_return_pct": 0.3,
+      "total_return_pct": 0.2,
+      "total_fees_usd": 102.71,
+      "fee_impact_pct": 0.103,
+      "trades_count": 6
+    },
+    "ensemble_50_50": {
+      "name": "6. Ensemble 50/50 (Trend + Reversion)",
+      "gross_equity": 98727.91,
+      "final_equity": 98583.39,
+      "gross_return_pct": -1.27,
+      "total_return_pct": -1.42,
+      "total_fees_usd": 144.52,
+      "fee_impact_pct": 0.145,
+      "trades_count": 20
+    },
+    "buy_and_hold": {
+      "name": "7. Buy & Hold (5 Asset)",
+      "gross_equity": 90843.01,
+      "final_equity": 90807.88,
+      "gross_return_pct": -9.16,
+      "total_return_pct": -9.19,
+      "total_fees_usd": 35.13,
+      "fee_impact_pct": 0.035,
+      "trades_count": 5
+    },
+    "sp500": {
+      "name": "Benchmark S&P 500 (SPY)",
+      "gross_equity": 92893.39,
+      "final_equity": 92862.52,
+      "gross_return_pct": -7.11,
+      "total_return_pct": -7.14,
+      "total_fees_usd": 30.87,
+      "fee_impact_pct": 0.031,
+      "trades_count": 1
+    }
+  },
+  "history": [
+    {
+      "date": "2026-10-15",
+      "equities": {
+        "trend_following": 99993.05,
+        "mean_reversion": 99993.0,
+        "vol_breakout": 100000.0,
+        "risk_parity": 99964.84,
+        "rel_momentum": 99965.07,
+        "ensemble_50_50": 99993.02,
+        "buy_and_hold": 99964.87,
+        "sp500": 99969.13
+      },
+      "daily_returns": {
+        "trend_following": -0.01,
+        "mean_reversion": -0.01,
+        "vol_breakout": 0.0,
+        "risk_parity": -0.04,
+        "rel_momentum": -0.03,
+        "ensemble_50_50": -0.01,
+        "buy_and_hold": -0.04,
+        "sp500": -0.03
+      },
+      "daily_fees": {
+        "trend_following": 6.95,
+        "mean_reversion": 7.0,
+        "vol_breakout": 0.0,
+        "risk_parity": 35.16,
+        "rel_momentum": 34.93,
+        "ensemble_50_50": 6.97,
+        "buy_and_hold": 35.13,
+        "sp500": 30.87
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 177.19,
+            "total_value": 19845.28,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "mean_reversion": [
+          {
+            "ticker": "NVDA",
+            "shares": 92,
+            "entry_price": 217.23,
+            "close_price": 217.23,
+            "total_value": 19985.16,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 341.74,
+            "close_price": 341.74,
+            "total_value": 19479.2,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 63,
+            "entry_price": 217.23,
+            "close_price": 217.23,
+            "total_value": 13685.49,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "XLE",
+            "shares": 294,
+            "entry_price": 66.56,
+            "close_price": 66.56,
+            "total_value": 19568.64,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "GLD",
+            "shares": 62,
+            "entry_price": 382.71,
+            "close_price": 382.71,
+            "total_value": 23728.02,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "XLV",
+            "shares": 127,
+            "entry_price": 177.19,
+            "close_price": 177.19,
+            "total_value": 22503.13,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "XLE",
+            "shares": 747,
+            "entry_price": 66.56,
+            "close_price": 66.56,
+            "total_value": 49720.32,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "XLV",
+            "shares": 280,
+            "entry_price": 177.19,
+            "close_price": 177.19,
+            "total_value": 49613.2,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 177.19,
+            "total_value": 9922.64,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "NVDA [Rev 50%]",
+            "shares": 92,
+            "entry_price": 217.23,
+            "close_price": 217.23,
+            "total_value": 9992.58,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 341.74,
+            "total_value": 19820.94,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 217.23,
+            "total_value": 19767.93,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 66.56,
+            "total_value": 19834.88,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 382.71,
+            "total_value": 19518.21,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 177.19,
+            "total_value": 19845.28,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 771.79,
+            "total_value": 99560.91,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-10-16",
+      "equities": {
+        "trend_following": 99931.85,
+        "mean_reversion": 99707.8,
+        "vol_breakout": 100000.0,
+        "risk_parity": 100242.26,
+        "rel_momentum": 101085.63,
+        "ensemble_50_50": 99819.83,
+        "buy_and_hold": 100178.57,
+        "sp500": 98867.47
+      },
+      "daily_returns": {
+        "trend_following": -0.06,
+        "mean_reversion": -0.29,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.28,
+        "rel_momentum": 1.12,
+        "ensemble_50_50": -0.17,
+        "buy_and_hold": 0.21,
+        "sp500": -1.1
+      },
+      "daily_fees": {
+        "trend_following": 7.44,
+        "mean_reversion": 0.0,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 3.72,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 176.71,
+            "total_value": 19791.52,
+            "pnl_pct": -0.27,
+            "pnl_usd": -53.76
+          },
+          {
+            "ticker": "XLE",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 68.24,
+            "total_value": 19926.08,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "mean_reversion": [
+          {
+            "ticker": "NVDA",
+            "shares": 92,
+            "entry_price": 217.23,
+            "close_price": 214.13,
+            "total_value": 19699.96,
+            "pnl_pct": -1.43,
+            "pnl_usd": -285.2
+          }
+        ],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 341.74,
+            "close_price": 343.2,
+            "total_value": 19562.36,
+            "pnl_pct": 0.43,
+            "pnl_usd": 83.16
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 63,
+            "entry_price": 217.23,
+            "close_price": 214.13,
+            "total_value": 13490.19,
+            "pnl_pct": -1.43,
+            "pnl_usd": -195.3
+          },
+          {
+            "ticker": "XLE",
+            "shares": 294,
+            "entry_price": 66.56,
+            "close_price": 68.24,
+            "total_value": 20062.56,
+            "pnl_pct": 2.52,
+            "pnl_usd": 493.92
+          },
+          {
+            "ticker": "GLD",
+            "shares": 62,
+            "entry_price": 382.71,
+            "close_price": 382.01,
+            "total_value": 23684.62,
+            "pnl_pct": -0.18,
+            "pnl_usd": -43.4
+          },
+          {
+            "ticker": "XLV",
+            "shares": 127,
+            "entry_price": 177.19,
+            "close_price": 176.71,
+            "total_value": 22442.17,
+            "pnl_pct": -0.27,
+            "pnl_usd": -60.96
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "XLE",
+            "shares": 747,
+            "entry_price": 66.56,
+            "close_price": 68.24,
+            "total_value": 50975.28,
+            "pnl_pct": 2.52,
+            "pnl_usd": 1254.96
+          },
+          {
+            "ticker": "XLV",
+            "shares": 280,
+            "entry_price": 177.19,
+            "close_price": 176.71,
+            "total_value": 49478.8,
+            "pnl_pct": -0.27,
+            "pnl_usd": -134.4
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 176.71,
+            "total_value": 9895.76,
+            "pnl_pct": -0.27,
+            "pnl_usd": -26.88
+          },
+          {
+            "ticker": "XLE [Trend 50%]",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 68.24,
+            "total_value": 9963.04,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "NVDA [Rev 50%]",
+            "shares": 92,
+            "entry_price": 217.23,
+            "close_price": 214.13,
+            "total_value": 9849.98,
+            "pnl_pct": -1.43,
+            "pnl_usd": -142.6
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 343.2,
+            "total_value": 19905.55,
+            "pnl_pct": 0.43,
+            "pnl_usd": 84.62
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 214.13,
+            "total_value": 19485.83,
+            "pnl_pct": -1.43,
+            "pnl_usd": -282.1
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 68.24,
+            "total_value": 20335.52,
+            "pnl_pct": 2.52,
+            "pnl_usd": 500.64
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 382.01,
+            "total_value": 19482.51,
+            "pnl_pct": -0.18,
+            "pnl_usd": -35.7
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 176.71,
+            "total_value": 19791.52,
+            "pnl_pct": -0.27,
+            "pnl_usd": -53.76
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 763.25,
+            "total_value": 98459.25,
+            "pnl_pct": -1.11,
+            "pnl_usd": -1101.66
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-10-19",
+      "equities": {
+        "trend_following": 99684.65,
+        "mean_reversion": 99973.17,
+        "vol_breakout": 100000.0,
+        "risk_parity": 99991.3,
+        "rel_momentum": 100460.15,
+        "ensemble_50_50": 99828.91,
+        "buy_and_hold": 100049.63,
+        "sp500": 99284.14
+      },
+      "daily_returns": {
+        "trend_following": -0.25,
+        "mean_reversion": 0.27,
+        "vol_breakout": 0.0,
+        "risk_parity": -0.25,
+        "rel_momentum": -0.62,
+        "ensemble_50_50": 0.01,
+        "buy_and_hold": -0.13,
+        "sp500": 0.42
+      },
+      "daily_fees": {
+        "trend_following": 0.0,
+        "mean_reversion": 6.95,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 3.48,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 175.65,
+            "total_value": 19672.8,
+            "pnl_pct": -0.87,
+            "pnl_usd": -172.48
+          },
+          {
+            "ticker": "XLE",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 67.8,
+            "total_value": 19797.6,
+            "pnl_pct": -0.64,
+            "pnl_usd": -128.48
+          }
+        ],
+        "mean_reversion": [
+          {
+            "ticker": "NVDA",
+            "shares": 92,
+            "entry_price": 217.23,
+            "close_price": 217.09,
+            "total_value": 19972.28,
+            "pnl_pct": -0.06,
+            "pnl_usd": -12.88
+          },
+          {
+            "ticker": "XLV",
+            "shares": 113,
+            "entry_price": 175.65,
+            "close_price": 175.65,
+            "total_value": 19848.45,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 341.74,
+            "close_price": 342.68,
+            "total_value": 19532.74,
+            "pnl_pct": 0.27,
+            "pnl_usd": 53.54
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 63,
+            "entry_price": 217.23,
+            "close_price": 217.09,
+            "total_value": 13676.67,
+            "pnl_pct": -0.06,
+            "pnl_usd": -8.82
+          },
+          {
+            "ticker": "XLE",
+            "shares": 294,
+            "entry_price": 66.56,
+            "close_price": 67.8,
+            "total_value": 19933.2,
+            "pnl_pct": 1.86,
+            "pnl_usd": 364.56
+          },
+          {
+            "ticker": "GLD",
+            "shares": 62,
+            "entry_price": 382.71,
+            "close_price": 379.69,
+            "total_value": 23540.78,
+            "pnl_pct": -0.79,
+            "pnl_usd": -187.24
+          },
+          {
+            "ticker": "XLV",
+            "shares": 127,
+            "entry_price": 177.19,
+            "close_price": 175.65,
+            "total_value": 22307.55,
+            "pnl_pct": -0.87,
+            "pnl_usd": -195.58
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "XLE",
+            "shares": 747,
+            "entry_price": 66.56,
+            "close_price": 67.8,
+            "total_value": 50646.6,
+            "pnl_pct": 1.86,
+            "pnl_usd": 926.28
+          },
+          {
+            "ticker": "XLV",
+            "shares": 280,
+            "entry_price": 177.19,
+            "close_price": 175.65,
+            "total_value": 49182.0,
+            "pnl_pct": -0.87,
+            "pnl_usd": -431.2
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 175.65,
+            "total_value": 9836.4,
+            "pnl_pct": -0.87,
+            "pnl_usd": -86.24
+          },
+          {
+            "ticker": "XLE [Trend 50%]",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 67.8,
+            "total_value": 9898.8,
+            "pnl_pct": -0.64,
+            "pnl_usd": -64.24
+          },
+          {
+            "ticker": "NVDA [Rev 50%]",
+            "shares": 92,
+            "entry_price": 217.23,
+            "close_price": 217.09,
+            "total_value": 9986.14,
+            "pnl_pct": -0.06,
+            "pnl_usd": -6.44
+          },
+          {
+            "ticker": "XLV [Rev 50%]",
+            "shares": 113,
+            "entry_price": 175.65,
+            "close_price": 175.65,
+            "total_value": 9924.23,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 342.68,
+            "total_value": 19875.42,
+            "pnl_pct": 0.27,
+            "pnl_usd": 54.48
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 217.09,
+            "total_value": 19755.19,
+            "pnl_pct": -0.06,
+            "pnl_usd": -12.74
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 67.8,
+            "total_value": 20204.4,
+            "pnl_pct": 1.86,
+            "pnl_usd": 369.52
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 379.69,
+            "total_value": 19364.19,
+            "pnl_pct": -0.79,
+            "pnl_usd": -154.02
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 175.65,
+            "total_value": 19672.8,
+            "pnl_pct": -0.87,
+            "pnl_usd": -172.48
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 766.48,
+            "total_value": 98875.92,
+            "pnl_pct": -0.69,
+            "pnl_usd": -684.99
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-10-20",
+      "equities": {
+        "trend_following": 100201.33,
+        "mean_reversion": 100373.34,
+        "vol_breakout": 100000.0,
+        "risk_parity": 100209.4,
+        "rel_momentum": 101754.74,
+        "ensemble_50_50": 100287.34,
+        "buy_and_hold": 100207.5,
+        "sp500": 99615.67
+      },
+      "daily_returns": {
+        "trend_following": 0.52,
+        "mean_reversion": 0.4,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.22,
+        "rel_momentum": 1.29,
+        "ensemble_50_50": 0.46,
+        "buy_and_hold": 0.16,
+        "sp500": 0.33
+      },
+      "daily_fees": {
+        "trend_following": 0.0,
+        "mean_reversion": 14.0,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 7.0,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 179.82,
+            "total_value": 20139.84,
+            "pnl_pct": 1.48,
+            "pnl_usd": 294.56
+          },
+          {
+            "ticker": "XLE",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 67.97,
+            "total_value": 19847.24,
+            "pnl_pct": -0.4,
+            "pnl_usd": -78.84
+          }
+        ],
+        "mean_reversion": [
+          {
+            "ticker": "NVDA",
+            "shares": 92,
+            "entry_price": 217.23,
+            "close_price": 216.47,
+            "total_value": 19915.24,
+            "pnl_pct": -0.35,
+            "pnl_usd": -69.92
+          },
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 339.24,
+            "close_price": 339.24,
+            "total_value": 19676.05,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 341.74,
+            "close_price": 339.24,
+            "total_value": 19336.81,
+            "pnl_pct": -0.73,
+            "pnl_usd": -142.39
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 63,
+            "entry_price": 217.23,
+            "close_price": 216.47,
+            "total_value": 13637.61,
+            "pnl_pct": -0.35,
+            "pnl_usd": -47.88
+          },
+          {
+            "ticker": "XLE",
+            "shares": 294,
+            "entry_price": 66.56,
+            "close_price": 67.97,
+            "total_value": 19983.18,
+            "pnl_pct": 2.12,
+            "pnl_usd": 414.54
+          },
+          {
+            "ticker": "GLD",
+            "shares": 62,
+            "entry_price": 382.71,
+            "close_price": 377.65,
+            "total_value": 23414.3,
+            "pnl_pct": -1.32,
+            "pnl_usd": -313.72
+          },
+          {
+            "ticker": "XLV",
+            "shares": 127,
+            "entry_price": 177.19,
+            "close_price": 179.82,
+            "total_value": 22837.14,
+            "pnl_pct": 1.48,
+            "pnl_usd": 334.01
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "XLE",
+            "shares": 747,
+            "entry_price": 66.56,
+            "close_price": 67.97,
+            "total_value": 50773.59,
+            "pnl_pct": 2.12,
+            "pnl_usd": 1053.27
+          },
+          {
+            "ticker": "XLV",
+            "shares": 280,
+            "entry_price": 177.19,
+            "close_price": 179.82,
+            "total_value": 50349.6,
+            "pnl_pct": 1.48,
+            "pnl_usd": 736.4
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 179.82,
+            "total_value": 10069.92,
+            "pnl_pct": 1.48,
+            "pnl_usd": 147.28
+          },
+          {
+            "ticker": "XLE [Trend 50%]",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 67.97,
+            "total_value": 9923.62,
+            "pnl_pct": -0.4,
+            "pnl_usd": -39.42
+          },
+          {
+            "ticker": "NVDA [Rev 50%]",
+            "shares": 92,
+            "entry_price": 217.23,
+            "close_price": 216.47,
+            "total_value": 9957.62,
+            "pnl_pct": -0.35,
+            "pnl_usd": -34.96
+          },
+          {
+            "ticker": "AAPL [Rev 50%]",
+            "shares": 58,
+            "entry_price": 339.24,
+            "close_price": 339.24,
+            "total_value": 9838.02,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 339.24,
+            "total_value": 19676.05,
+            "pnl_pct": -0.73,
+            "pnl_usd": -144.89
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 216.47,
+            "total_value": 19698.77,
+            "pnl_pct": -0.35,
+            "pnl_usd": -69.16
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 67.97,
+            "total_value": 20255.06,
+            "pnl_pct": 2.12,
+            "pnl_usd": 420.18
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 377.65,
+            "total_value": 19260.15,
+            "pnl_pct": -1.32,
+            "pnl_usd": -258.06
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 179.82,
+            "total_value": 20139.84,
+            "pnl_pct": 1.48,
+            "pnl_usd": 294.56
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 769.05,
+            "total_value": 99207.45,
+            "pnl_pct": -0.36,
+            "pnl_usd": -353.46
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-10-21",
+      "equities": {
+        "trend_following": 100158.25,
+        "mean_reversion": 101125.45,
+        "vol_breakout": 100000.0,
+        "risk_parity": 100836.34,
+        "rel_momentum": 101650.27,
+        "ensemble_50_50": 100641.85,
+        "buy_and_hold": 100992.59,
+        "sp500": 100136.84
+      },
+      "daily_returns": {
+        "trend_following": -0.04,
+        "mean_reversion": 0.75,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.63,
+        "rel_momentum": -0.1,
+        "ensemble_50_50": 0.35,
+        "buy_and_hold": 0.78,
+        "sp500": 0.52
+      },
+      "daily_fees": {
+        "trend_following": 0.0,
+        "mean_reversion": 14.11,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 7.05,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 178.94,
+            "total_value": 20041.28,
+            "pnl_pct": 0.99,
+            "pnl_usd": 196.0
+          },
+          {
+            "ticker": "XLE",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 68.16,
+            "total_value": 19902.72,
+            "pnl_pct": -0.12,
+            "pnl_usd": -23.36
+          }
+        ],
+        "mean_reversion": [],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 341.74,
+            "close_price": 343.73,
+            "total_value": 19592.54,
+            "pnl_pct": 0.58,
+            "pnl_usd": 113.34
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 63,
+            "entry_price": 217.23,
+            "close_price": 221.97,
+            "total_value": 13984.11,
+            "pnl_pct": 2.18,
+            "pnl_usd": 298.62
+          },
+          {
+            "ticker": "XLE",
+            "shares": 294,
+            "entry_price": 66.56,
+            "close_price": 68.16,
+            "total_value": 20039.04,
+            "pnl_pct": 2.4,
+            "pnl_usd": 470.4
+          },
+          {
+            "ticker": "GLD",
+            "shares": 62,
+            "entry_price": 382.71,
+            "close_price": 378.95,
+            "total_value": 23494.9,
+            "pnl_pct": -0.98,
+            "pnl_usd": -233.12
+          },
+          {
+            "ticker": "XLV",
+            "shares": 127,
+            "entry_price": 177.19,
+            "close_price": 178.94,
+            "total_value": 22725.38,
+            "pnl_pct": 0.99,
+            "pnl_usd": 222.25
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "XLE",
+            "shares": 747,
+            "entry_price": 66.56,
+            "close_price": 68.16,
+            "total_value": 50915.52,
+            "pnl_pct": 2.4,
+            "pnl_usd": 1195.2
+          },
+          {
+            "ticker": "XLV",
+            "shares": 280,
+            "entry_price": 177.19,
+            "close_price": 178.94,
+            "total_value": 50103.2,
+            "pnl_pct": 0.99,
+            "pnl_usd": 490.0
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 178.94,
+            "total_value": 10020.64,
+            "pnl_pct": 0.99,
+            "pnl_usd": 98.0
+          },
+          {
+            "ticker": "XLE [Trend 50%]",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 68.16,
+            "total_value": 9951.36,
+            "pnl_pct": -0.12,
+            "pnl_usd": -11.68
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 343.73,
+            "total_value": 19936.27,
+            "pnl_pct": 0.58,
+            "pnl_usd": 115.33
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 221.97,
+            "total_value": 20199.27,
+            "pnl_pct": 2.18,
+            "pnl_usd": 431.34
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 68.16,
+            "total_value": 20311.68,
+            "pnl_pct": 2.4,
+            "pnl_usd": 476.8
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 378.95,
+            "total_value": 19326.45,
+            "pnl_pct": -0.98,
+            "pnl_usd": -191.76
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 178.94,
+            "total_value": 20041.28,
+            "pnl_pct": 0.99,
+            "pnl_usd": 196.0
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 773.09,
+            "total_value": 99728.61,
+            "pnl_pct": 0.17,
+            "pnl_usd": 167.71
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-10-22",
+      "equities": {
+        "trend_following": 100243.34,
+        "mean_reversion": 101125.45,
+        "vol_breakout": 100000.0,
+        "risk_parity": 99971.74,
+        "rel_momentum": 101870.34,
+        "ensemble_50_50": 100684.4,
+        "buy_and_hold": 99930.63,
+        "sp500": 98959.07
+      },
+      "daily_returns": {
+        "trend_following": 0.08,
+        "mean_reversion": 0.0,
+        "vol_breakout": 0.0,
+        "risk_parity": -0.86,
+        "rel_momentum": 0.22,
+        "ensemble_50_50": 0.04,
+        "buy_and_hold": -1.05,
+        "sp500": -1.18
+      },
+      "daily_fees": {
+        "trend_following": 6.95,
+        "mean_reversion": 0.0,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 3.48,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 181.3,
+            "total_value": 20305.6,
+            "pnl_pct": 2.32,
+            "pnl_usd": 460.32
+          },
+          {
+            "ticker": "XLE",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 67.57,
+            "total_value": 19730.44,
+            "pnl_pct": -0.98,
+            "pnl_usd": -195.64
+          },
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 347.96,
+            "close_price": 347.96,
+            "total_value": 19833.47,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "mean_reversion": [],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 341.74,
+            "close_price": 347.96,
+            "total_value": 19833.47,
+            "pnl_pct": 1.82,
+            "pnl_usd": 354.27
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 63,
+            "entry_price": 217.23,
+            "close_price": 212.21,
+            "total_value": 13369.23,
+            "pnl_pct": -2.31,
+            "pnl_usd": -316.26
+          },
+          {
+            "ticker": "XLE",
+            "shares": 294,
+            "entry_price": 66.56,
+            "close_price": 67.57,
+            "total_value": 19865.58,
+            "pnl_pct": 1.52,
+            "pnl_usd": 296.94
+          },
+          {
+            "ticker": "GLD",
+            "shares": 62,
+            "entry_price": 382.71,
+            "close_price": 369.0,
+            "total_value": 22878.0,
+            "pnl_pct": -3.58,
+            "pnl_usd": -850.02
+          },
+          {
+            "ticker": "XLV",
+            "shares": 127,
+            "entry_price": 177.19,
+            "close_price": 181.3,
+            "total_value": 23025.1,
+            "pnl_pct": 2.32,
+            "pnl_usd": 521.97
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "XLE",
+            "shares": 747,
+            "entry_price": 66.56,
+            "close_price": 67.57,
+            "total_value": 50474.79,
+            "pnl_pct": 1.52,
+            "pnl_usd": 754.47
+          },
+          {
+            "ticker": "XLV",
+            "shares": 280,
+            "entry_price": 177.19,
+            "close_price": 181.3,
+            "total_value": 50764.0,
+            "pnl_pct": 2.32,
+            "pnl_usd": 1150.8
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 181.3,
+            "total_value": 10152.8,
+            "pnl_pct": 2.32,
+            "pnl_usd": 230.16
+          },
+          {
+            "ticker": "XLE [Trend 50%]",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 67.57,
+            "total_value": 9865.22,
+            "pnl_pct": -0.98,
+            "pnl_usd": -97.82
+          },
+          {
+            "ticker": "AAPL [Trend 50%]",
+            "shares": 57,
+            "entry_price": 347.96,
+            "close_price": 347.96,
+            "total_value": 9916.74,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 347.96,
+            "total_value": 20181.43,
+            "pnl_pct": 1.82,
+            "pnl_usd": 360.49
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 212.21,
+            "total_value": 19311.11,
+            "pnl_pct": -2.31,
+            "pnl_usd": -456.82
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 67.57,
+            "total_value": 20135.86,
+            "pnl_pct": 1.52,
+            "pnl_usd": 300.98
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 369.0,
+            "total_value": 18819.0,
+            "pnl_pct": -3.58,
+            "pnl_usd": -699.21
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 181.3,
+            "total_value": 20305.6,
+            "pnl_pct": 2.32,
+            "pnl_usd": 460.32
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 763.96,
+            "total_value": 98550.84,
+            "pnl_pct": -1.01,
+            "pnl_usd": -1010.06
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-10-23",
+      "equities": {
+        "trend_following": 100503.11,
+        "mean_reversion": 101118.5,
+        "vol_breakout": 100000.0,
+        "risk_parity": 99977.8,
+        "rel_momentum": 102619.46,
+        "ensemble_50_50": 100810.81,
+        "buy_and_hold": 99964.83,
+        "sp500": 98444.35
+      },
+      "daily_returns": {
+        "trend_following": 0.26,
+        "mean_reversion": -0.01,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.01,
+        "rel_momentum": 0.74,
+        "ensemble_50_50": 0.13,
+        "buy_and_hold": 0.03,
+        "sp500": -0.52
+      },
+      "daily_fees": {
+        "trend_following": 0.0,
+        "mean_reversion": 6.95,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 3.48,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 179.28,
+            "total_value": 20079.36,
+            "pnl_pct": 1.18,
+            "pnl_usd": 234.08
+          },
+          {
+            "ticker": "XLE",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 69.33,
+            "total_value": 20244.36,
+            "pnl_pct": 1.6,
+            "pnl_usd": 318.28
+          },
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 347.96,
+            "close_price": 347.47,
+            "total_value": 19805.56,
+            "pnl_pct": -0.14,
+            "pnl_usd": -27.91
+          }
+        ],
+        "mean_reversion": [
+          {
+            "ticker": "NVDA",
+            "shares": 94,
+            "entry_price": 210.96,
+            "close_price": 210.96,
+            "total_value": 19830.24,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 341.74,
+            "close_price": 347.47,
+            "total_value": 19805.56,
+            "pnl_pct": 1.68,
+            "pnl_usd": 326.36
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 63,
+            "entry_price": 217.23,
+            "close_price": 210.96,
+            "total_value": 13290.48,
+            "pnl_pct": -2.89,
+            "pnl_usd": -395.01
+          },
+          {
+            "ticker": "XLE",
+            "shares": 294,
+            "entry_price": 66.56,
+            "close_price": 69.33,
+            "total_value": 20383.02,
+            "pnl_pct": 4.16,
+            "pnl_usd": 814.38
+          },
+          {
+            "ticker": "GLD",
+            "shares": 62,
+            "entry_price": 382.71,
+            "close_price": 366.61,
+            "total_value": 22729.82,
+            "pnl_pct": -4.21,
+            "pnl_usd": -998.2
+          },
+          {
+            "ticker": "XLV",
+            "shares": 127,
+            "entry_price": 177.19,
+            "close_price": 179.28,
+            "total_value": 22768.56,
+            "pnl_pct": 1.18,
+            "pnl_usd": 265.43
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "XLE",
+            "shares": 747,
+            "entry_price": 66.56,
+            "close_price": 69.33,
+            "total_value": 51789.51,
+            "pnl_pct": 4.16,
+            "pnl_usd": 2069.19
+          },
+          {
+            "ticker": "XLV",
+            "shares": 280,
+            "entry_price": 177.19,
+            "close_price": 179.28,
+            "total_value": 50198.4,
+            "pnl_pct": 1.18,
+            "pnl_usd": 585.2
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 179.28,
+            "total_value": 10039.68,
+            "pnl_pct": 1.18,
+            "pnl_usd": 117.04
+          },
+          {
+            "ticker": "XLE [Trend 50%]",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 69.33,
+            "total_value": 10122.18,
+            "pnl_pct": 1.6,
+            "pnl_usd": 159.14
+          },
+          {
+            "ticker": "AAPL [Trend 50%]",
+            "shares": 57,
+            "entry_price": 347.96,
+            "close_price": 347.47,
+            "total_value": 9902.78,
+            "pnl_pct": -0.14,
+            "pnl_usd": -13.96
+          },
+          {
+            "ticker": "NVDA [Rev 50%]",
+            "shares": 94,
+            "entry_price": 210.96,
+            "close_price": 210.96,
+            "total_value": 9915.12,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 347.47,
+            "total_value": 20153.03,
+            "pnl_pct": 1.68,
+            "pnl_usd": 332.09
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 210.96,
+            "total_value": 19197.36,
+            "pnl_pct": -2.89,
+            "pnl_usd": -570.57
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 69.33,
+            "total_value": 20660.34,
+            "pnl_pct": 4.16,
+            "pnl_usd": 825.46
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 366.61,
+            "total_value": 18697.11,
+            "pnl_pct": -4.21,
+            "pnl_usd": -821.1
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 179.28,
+            "total_value": 20079.36,
+            "pnl_pct": 1.18,
+            "pnl_usd": 234.08
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 759.97,
+            "total_value": 98036.13,
+            "pnl_pct": -1.53,
+            "pnl_usd": -1524.78
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-10-26",
+      "equities": {
+        "trend_following": 100376.06,
+        "mean_reversion": 101571.22,
+        "vol_breakout": 100000.0,
+        "risk_parity": 100243.91,
+        "rel_momentum": 102851.03,
+        "ensemble_50_50": 100973.64,
+        "buy_and_hold": 100356.17,
+        "sp500": 99140.95
+      },
+      "daily_returns": {
+        "trend_following": -0.13,
+        "mean_reversion": 0.45,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.27,
+        "rel_momentum": 0.23,
+        "ensemble_50_50": 0.16,
+        "buy_and_hold": 0.39,
+        "sp500": 0.71
+      },
+      "daily_fees": {
+        "trend_following": 0.0,
+        "mean_reversion": 21.04,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 10.52,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 179.28,
+            "total_value": 20079.36,
+            "pnl_pct": 1.18,
+            "pnl_usd": 234.08
+          },
+          {
+            "ticker": "XLE",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 69.64,
+            "total_value": 20334.88,
+            "pnl_pct": 2.05,
+            "pnl_usd": 408.8
+          },
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 347.96,
+            "close_price": 343.65,
+            "total_value": 19587.99,
+            "pnl_pct": -1.24,
+            "pnl_usd": -245.48
+          }
+        ],
+        "mean_reversion": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 343.65,
+            "close_price": 343.65,
+            "total_value": 19931.64,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "XLV",
+            "shares": 111,
+            "entry_price": 179.28,
+            "close_price": 179.28,
+            "total_value": 19900.08,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 341.74,
+            "close_price": 343.65,
+            "total_value": 19587.99,
+            "pnl_pct": 0.56,
+            "pnl_usd": 108.79
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 63,
+            "entry_price": 217.23,
+            "close_price": 216.0,
+            "total_value": 13608.0,
+            "pnl_pct": -0.57,
+            "pnl_usd": -77.49
+          },
+          {
+            "ticker": "XLE",
+            "shares": 294,
+            "entry_price": 66.56,
+            "close_price": 69.64,
+            "total_value": 20474.16,
+            "pnl_pct": 4.63,
+            "pnl_usd": 905.52
+          },
+          {
+            "ticker": "GLD",
+            "shares": 62,
+            "entry_price": 382.71,
+            "close_price": 367.82,
+            "total_value": 22804.84,
+            "pnl_pct": -3.89,
+            "pnl_usd": -923.18
+          },
+          {
+            "ticker": "XLV",
+            "shares": 127,
+            "entry_price": 177.19,
+            "close_price": 179.28,
+            "total_value": 22768.56,
+            "pnl_pct": 1.18,
+            "pnl_usd": 265.43
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "XLE",
+            "shares": 747,
+            "entry_price": 66.56,
+            "close_price": 69.64,
+            "total_value": 52021.08,
+            "pnl_pct": 4.63,
+            "pnl_usd": 2300.76
+          },
+          {
+            "ticker": "XLV",
+            "shares": 280,
+            "entry_price": 177.19,
+            "close_price": 179.28,
+            "total_value": 50198.4,
+            "pnl_pct": 1.18,
+            "pnl_usd": 585.2
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 179.28,
+            "total_value": 10039.68,
+            "pnl_pct": 1.18,
+            "pnl_usd": 117.04
+          },
+          {
+            "ticker": "XLE [Trend 50%]",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 69.64,
+            "total_value": 10167.44,
+            "pnl_pct": 2.05,
+            "pnl_usd": 204.4
+          },
+          {
+            "ticker": "AAPL [Trend 50%]",
+            "shares": 57,
+            "entry_price": 347.96,
+            "close_price": 343.65,
+            "total_value": 9794.0,
+            "pnl_pct": -1.24,
+            "pnl_usd": -122.74
+          },
+          {
+            "ticker": "AAPL [Rev 50%]",
+            "shares": 58,
+            "entry_price": 343.65,
+            "close_price": 343.65,
+            "total_value": 9965.82,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "XLV [Rev 50%]",
+            "shares": 111,
+            "entry_price": 179.28,
+            "close_price": 179.28,
+            "total_value": 9950.04,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 343.65,
+            "total_value": 19931.64,
+            "pnl_pct": 0.56,
+            "pnl_usd": 110.7
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 216.0,
+            "total_value": 19656.0,
+            "pnl_pct": -0.57,
+            "pnl_usd": -111.93
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 69.64,
+            "total_value": 20752.72,
+            "pnl_pct": 4.63,
+            "pnl_usd": 917.84
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 367.82,
+            "total_value": 18758.82,
+            "pnl_pct": -3.89,
+            "pnl_usd": -759.39
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 179.28,
+            "total_value": 20079.36,
+            "pnl_pct": 1.18,
+            "pnl_usd": 234.08
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 765.37,
+            "total_value": 98732.73,
+            "pnl_pct": -0.83,
+            "pnl_usd": -828.18
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-10-27",
+      "equities": {
+        "trend_following": 100128.99,
+        "mean_reversion": 101737.97,
+        "vol_breakout": 100000.0,
+        "risk_parity": 100391.22,
+        "rel_momentum": 101754.82,
+        "ensemble_50_50": 100933.48,
+        "buy_and_hold": 100507.71,
+        "sp500": 99694.36
+      },
+      "daily_returns": {
+        "trend_following": -0.25,
+        "mean_reversion": 0.16,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.15,
+        "rel_momentum": -1.07,
+        "ensemble_50_50": -0.04,
+        "buy_and_hold": 0.15,
+        "sp500": 0.56
+      },
+      "daily_fees": {
+        "trend_following": 0.0,
+        "mean_reversion": 7.03,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 3.52,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 179.18,
+            "total_value": 20068.16,
+            "pnl_pct": 1.12,
+            "pnl_usd": 222.88
+          },
+          {
+            "ticker": "XLE",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 68.21,
+            "total_value": 19917.32,
+            "pnl_pct": -0.04,
+            "pnl_usd": -8.76
+          },
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 347.96,
+            "close_price": 346.84,
+            "total_value": 19769.68,
+            "pnl_pct": -0.32,
+            "pnl_usd": -63.79
+          }
+        ],
+        "mean_reversion": [
+          {
+            "ticker": "XLV",
+            "shares": 111,
+            "entry_price": 179.28,
+            "close_price": 179.18,
+            "total_value": 19888.98,
+            "pnl_pct": -0.06,
+            "pnl_usd": -11.1
+          }
+        ],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 341.74,
+            "close_price": 346.84,
+            "total_value": 19769.68,
+            "pnl_pct": 1.49,
+            "pnl_usd": 290.48
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 63,
+            "entry_price": 217.23,
+            "close_price": 217.94,
+            "total_value": 13730.22,
+            "pnl_pct": 0.33,
+            "pnl_usd": 44.73
+          },
+          {
+            "ticker": "XLE",
+            "shares": 294,
+            "entry_price": 66.56,
+            "close_price": 68.21,
+            "total_value": 20053.74,
+            "pnl_pct": 2.48,
+            "pnl_usd": 485.1
+          },
+          {
+            "ticker": "GLD",
+            "shares": 62,
+            "entry_price": 382.71,
+            "close_price": 372.28,
+            "total_value": 23081.36,
+            "pnl_pct": -2.73,
+            "pnl_usd": -646.66
+          },
+          {
+            "ticker": "XLV",
+            "shares": 127,
+            "entry_price": 177.19,
+            "close_price": 179.18,
+            "total_value": 22755.86,
+            "pnl_pct": 1.12,
+            "pnl_usd": 252.73
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "XLE",
+            "shares": 747,
+            "entry_price": 66.56,
+            "close_price": 68.21,
+            "total_value": 50952.87,
+            "pnl_pct": 2.48,
+            "pnl_usd": 1232.55
+          },
+          {
+            "ticker": "XLV",
+            "shares": 280,
+            "entry_price": 177.19,
+            "close_price": 179.18,
+            "total_value": 50170.4,
+            "pnl_pct": 1.12,
+            "pnl_usd": 557.2
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 179.18,
+            "total_value": 10034.08,
+            "pnl_pct": 1.12,
+            "pnl_usd": 111.44
+          },
+          {
+            "ticker": "XLE [Trend 50%]",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 68.21,
+            "total_value": 9958.66,
+            "pnl_pct": -0.04,
+            "pnl_usd": -4.38
+          },
+          {
+            "ticker": "AAPL [Trend 50%]",
+            "shares": 57,
+            "entry_price": 347.96,
+            "close_price": 346.84,
+            "total_value": 9884.84,
+            "pnl_pct": -0.32,
+            "pnl_usd": -31.89
+          },
+          {
+            "ticker": "XLV [Rev 50%]",
+            "shares": 111,
+            "entry_price": 179.28,
+            "close_price": 179.18,
+            "total_value": 9944.49,
+            "pnl_pct": -0.06,
+            "pnl_usd": -5.55
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 346.84,
+            "total_value": 20116.52,
+            "pnl_pct": 1.49,
+            "pnl_usd": 295.58
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 217.94,
+            "total_value": 19832.54,
+            "pnl_pct": 0.33,
+            "pnl_usd": 64.61
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 68.21,
+            "total_value": 20326.58,
+            "pnl_pct": 2.48,
+            "pnl_usd": 491.7
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 372.28,
+            "total_value": 18986.28,
+            "pnl_pct": -2.73,
+            "pnl_usd": -531.93
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 179.18,
+            "total_value": 20068.16,
+            "pnl_pct": 1.12,
+            "pnl_usd": 222.88
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 769.66,
+            "total_value": 99286.14,
+            "pnl_pct": -0.28,
+            "pnl_usd": -274.77
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-10-28",
+      "equities": {
+        "trend_following": 100073.3,
+        "mean_reversion": 101797.91,
+        "vol_breakout": 100000.0,
+        "risk_parity": 100259.09,
+        "rel_momentum": 102085.3,
+        "ensemble_50_50": 100935.61,
+        "buy_and_hold": 100279.96,
+        "sp500": 100036.21
+      },
+      "daily_returns": {
+        "trend_following": -0.06,
+        "mean_reversion": 0.06,
+        "vol_breakout": 0.0,
+        "risk_parity": -0.13,
+        "rel_momentum": 0.32,
+        "ensemble_50_50": 0.0,
+        "buy_and_hold": -0.23,
+        "sp500": 0.34
+      },
+      "daily_fees": {
+        "trend_following": 0.0,
+        "mean_reversion": 0.0,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 0.0,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 179.72,
+            "total_value": 20128.64,
+            "pnl_pct": 1.43,
+            "pnl_usd": 283.36
+          },
+          {
+            "ticker": "XLE",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 68.45,
+            "total_value": 19987.4,
+            "pnl_pct": 0.31,
+            "pnl_usd": 61.32
+          },
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 347.96,
+            "close_price": 343.57,
+            "total_value": 19583.43,
+            "pnl_pct": -1.26,
+            "pnl_usd": -250.04
+          }
+        ],
+        "mean_reversion": [
+          {
+            "ticker": "XLV",
+            "shares": 111,
+            "entry_price": 179.28,
+            "close_price": 179.72,
+            "total_value": 19948.92,
+            "pnl_pct": 0.25,
+            "pnl_usd": 48.84
+          }
+        ],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 341.74,
+            "close_price": 343.57,
+            "total_value": 19583.43,
+            "pnl_pct": 0.54,
+            "pnl_usd": 104.23
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 63,
+            "entry_price": 217.23,
+            "close_price": 215.38,
+            "total_value": 13568.94,
+            "pnl_pct": -0.85,
+            "pnl_usd": -116.55
+          },
+          {
+            "ticker": "XLE",
+            "shares": 294,
+            "entry_price": 66.56,
+            "close_price": 68.45,
+            "total_value": 20124.3,
+            "pnl_pct": 2.84,
+            "pnl_usd": 555.66
+          },
+          {
+            "ticker": "GLD",
+            "shares": 62,
+            "entry_price": 382.71,
+            "close_price": 373.51,
+            "total_value": 23157.62,
+            "pnl_pct": -2.4,
+            "pnl_usd": -570.4
+          },
+          {
+            "ticker": "XLV",
+            "shares": 127,
+            "entry_price": 177.19,
+            "close_price": 179.72,
+            "total_value": 22824.44,
+            "pnl_pct": 1.43,
+            "pnl_usd": 321.31
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "XLE",
+            "shares": 747,
+            "entry_price": 66.56,
+            "close_price": 68.45,
+            "total_value": 51132.15,
+            "pnl_pct": 2.84,
+            "pnl_usd": 1411.83
+          },
+          {
+            "ticker": "XLV",
+            "shares": 280,
+            "entry_price": 177.19,
+            "close_price": 179.72,
+            "total_value": 50321.6,
+            "pnl_pct": 1.43,
+            "pnl_usd": 708.4
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 179.72,
+            "total_value": 10064.32,
+            "pnl_pct": 1.43,
+            "pnl_usd": 141.68
+          },
+          {
+            "ticker": "XLE [Trend 50%]",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 68.45,
+            "total_value": 9993.7,
+            "pnl_pct": 0.31,
+            "pnl_usd": 30.66
+          },
+          {
+            "ticker": "AAPL [Trend 50%]",
+            "shares": 57,
+            "entry_price": 347.96,
+            "close_price": 343.57,
+            "total_value": 9791.72,
+            "pnl_pct": -1.26,
+            "pnl_usd": -125.02
+          },
+          {
+            "ticker": "XLV [Rev 50%]",
+            "shares": 111,
+            "entry_price": 179.28,
+            "close_price": 179.72,
+            "total_value": 9974.46,
+            "pnl_pct": 0.25,
+            "pnl_usd": 24.42
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 343.57,
+            "total_value": 19927.0,
+            "pnl_pct": 0.54,
+            "pnl_usd": 106.06
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 215.38,
+            "total_value": 19599.58,
+            "pnl_pct": -0.85,
+            "pnl_usd": -168.35
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 68.45,
+            "total_value": 20398.1,
+            "pnl_pct": 2.84,
+            "pnl_usd": 563.22
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 373.51,
+            "total_value": 19049.01,
+            "pnl_pct": -2.4,
+            "pnl_usd": -469.2
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 179.72,
+            "total_value": 20128.64,
+            "pnl_pct": 1.43,
+            "pnl_usd": 283.36
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 772.31,
+            "total_value": 99627.99,
+            "pnl_pct": 0.07,
+            "pnl_usd": 67.08
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-10-29",
+      "equities": {
+        "trend_following": 100922.4,
+        "mean_reversion": 102263.34,
+        "vol_breakout": 100000.0,
+        "risk_parity": 100758.87,
+        "rel_momentum": 103489.12,
+        "ensemble_50_50": 101592.87,
+        "buy_and_hold": 100727.24,
+        "sp500": 99655.66
+      },
+      "daily_returns": {
+        "trend_following": 0.85,
+        "mean_reversion": 0.46,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.5,
+        "rel_momentum": 1.38,
+        "ensemble_50_50": 0.65,
+        "buy_and_hold": 0.45,
+        "sp500": -0.38
+      },
+      "daily_fees": {
+        "trend_following": 0.0,
+        "mean_reversion": 14.09,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 7.04,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 184.04,
+            "total_value": 20612.48,
+            "pnl_pct": 3.87,
+            "pnl_usd": 767.2
+          },
+          {
+            "ticker": "XLE",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 68.71,
+            "total_value": 20063.32,
+            "pnl_pct": 0.69,
+            "pnl_usd": 137.24
+          },
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 347.96,
+            "close_price": 348.65,
+            "total_value": 19872.77,
+            "pnl_pct": 0.2,
+            "pnl_usd": 39.3
+          }
+        ],
+        "mean_reversion": [
+          {
+            "ticker": "NVDA",
+            "shares": 93,
+            "entry_price": 213.66,
+            "close_price": 213.66,
+            "total_value": 19870.38,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 341.74,
+            "close_price": 348.65,
+            "total_value": 19872.77,
+            "pnl_pct": 2.02,
+            "pnl_usd": 393.57
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 63,
+            "entry_price": 217.23,
+            "close_price": 213.66,
+            "total_value": 13460.58,
+            "pnl_pct": -1.64,
+            "pnl_usd": -224.91
+          },
+          {
+            "ticker": "XLE",
+            "shares": 294,
+            "entry_price": 66.56,
+            "close_price": 68.71,
+            "total_value": 20200.74,
+            "pnl_pct": 3.23,
+            "pnl_usd": 632.1
+          },
+          {
+            "ticker": "GLD",
+            "shares": 62,
+            "entry_price": 382.71,
+            "close_price": 368.57,
+            "total_value": 22851.34,
+            "pnl_pct": -3.69,
+            "pnl_usd": -876.68
+          },
+          {
+            "ticker": "XLV",
+            "shares": 127,
+            "entry_price": 177.19,
+            "close_price": 184.04,
+            "total_value": 23373.08,
+            "pnl_pct": 3.87,
+            "pnl_usd": 869.95
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "XLE",
+            "shares": 747,
+            "entry_price": 66.56,
+            "close_price": 68.71,
+            "total_value": 51326.37,
+            "pnl_pct": 3.23,
+            "pnl_usd": 1606.05
+          },
+          {
+            "ticker": "XLV",
+            "shares": 280,
+            "entry_price": 177.19,
+            "close_price": 184.04,
+            "total_value": 51531.2,
+            "pnl_pct": 3.87,
+            "pnl_usd": 1918.0
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 184.04,
+            "total_value": 10306.24,
+            "pnl_pct": 3.87,
+            "pnl_usd": 383.6
+          },
+          {
+            "ticker": "XLE [Trend 50%]",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 68.71,
+            "total_value": 10031.66,
+            "pnl_pct": 0.69,
+            "pnl_usd": 68.62
+          },
+          {
+            "ticker": "AAPL [Trend 50%]",
+            "shares": 57,
+            "entry_price": 347.96,
+            "close_price": 348.65,
+            "total_value": 9936.39,
+            "pnl_pct": 0.2,
+            "pnl_usd": 19.65
+          },
+          {
+            "ticker": "NVDA [Rev 50%]",
+            "shares": 93,
+            "entry_price": 213.66,
+            "close_price": 213.66,
+            "total_value": 9935.19,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 348.65,
+            "total_value": 20221.42,
+            "pnl_pct": 2.02,
+            "pnl_usd": 400.48
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 213.66,
+            "total_value": 19443.06,
+            "pnl_pct": -1.64,
+            "pnl_usd": -324.87
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 68.71,
+            "total_value": 20475.58,
+            "pnl_pct": 3.23,
+            "pnl_usd": 640.7
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 368.57,
+            "total_value": 18797.07,
+            "pnl_pct": -3.69,
+            "pnl_usd": -721.14
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 184.04,
+            "total_value": 20612.48,
+            "pnl_pct": 3.87,
+            "pnl_usd": 767.2
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 769.36,
+            "total_value": 99247.44,
+            "pnl_pct": -0.31,
+            "pnl_usd": -313.47
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-10-30",
+      "equities": {
+        "trend_following": 101154.1,
+        "mean_reversion": 101424.48,
+        "vol_breakout": 100000.0,
+        "risk_parity": 99644.41,
+        "rel_momentum": 104700.09,
+        "ensemble_50_50": 101289.29,
+        "buy_and_hold": 99489.41,
+        "sp500": 97896.1
+      },
+      "daily_returns": {
+        "trend_following": 0.23,
+        "mean_reversion": -0.82,
+        "vol_breakout": 0.0,
+        "risk_parity": -1.11,
+        "rel_momentum": 1.17,
+        "ensemble_50_50": -0.3,
+        "buy_and_hold": -1.23,
+        "sp500": -1.77
+      },
+      "daily_fees": {
+        "trend_following": 0.0,
+        "mean_reversion": 0.0,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 0.0,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 184.87,
+            "total_value": 20705.44,
+            "pnl_pct": 4.33,
+            "pnl_usd": 860.16
+          },
+          {
+            "ticker": "XLE",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 70.02,
+            "total_value": 20445.84,
+            "pnl_pct": 2.61,
+            "pnl_usd": 519.76
+          },
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 347.96,
+            "close_price": 344.37,
+            "total_value": 19629.0,
+            "pnl_pct": -1.03,
+            "pnl_usd": -204.47
+          }
+        ],
+        "mean_reversion": [
+          {
+            "ticker": "NVDA",
+            "shares": 93,
+            "entry_price": 213.66,
+            "close_price": 204.64,
+            "total_value": 19031.52,
+            "pnl_pct": -4.22,
+            "pnl_usd": -838.86
+          }
+        ],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 341.74,
+            "close_price": 344.37,
+            "total_value": 19629.0,
+            "pnl_pct": 0.77,
+            "pnl_usd": 149.8
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 63,
+            "entry_price": 217.23,
+            "close_price": 204.64,
+            "total_value": 12892.32,
+            "pnl_pct": -5.8,
+            "pnl_usd": -793.17
+          },
+          {
+            "ticker": "XLE",
+            "shares": 294,
+            "entry_price": 66.56,
+            "close_price": 70.02,
+            "total_value": 20585.88,
+            "pnl_pct": 5.2,
+            "pnl_usd": 1017.24
+          },
+          {
+            "ticker": "GLD",
+            "shares": 62,
+            "entry_price": 382.71,
+            "close_price": 355.78,
+            "total_value": 22058.36,
+            "pnl_pct": -7.04,
+            "pnl_usd": -1669.66
+          },
+          {
+            "ticker": "XLV",
+            "shares": 127,
+            "entry_price": 177.19,
+            "close_price": 184.87,
+            "total_value": 23478.49,
+            "pnl_pct": 4.33,
+            "pnl_usd": 975.36
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "XLE",
+            "shares": 747,
+            "entry_price": 66.56,
+            "close_price": 70.02,
+            "total_value": 52304.94,
+            "pnl_pct": 5.2,
+            "pnl_usd": 2584.62
+          },
+          {
+            "ticker": "XLV",
+            "shares": 280,
+            "entry_price": 177.19,
+            "close_price": 184.87,
+            "total_value": 51763.6,
+            "pnl_pct": 4.33,
+            "pnl_usd": 2150.4
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 184.87,
+            "total_value": 10352.72,
+            "pnl_pct": 4.33,
+            "pnl_usd": 430.08
+          },
+          {
+            "ticker": "XLE [Trend 50%]",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 70.02,
+            "total_value": 10222.92,
+            "pnl_pct": 2.61,
+            "pnl_usd": 259.88
+          },
+          {
+            "ticker": "AAPL [Trend 50%]",
+            "shares": 57,
+            "entry_price": 347.96,
+            "close_price": 344.37,
+            "total_value": 9814.5,
+            "pnl_pct": -1.03,
+            "pnl_usd": -102.23
+          },
+          {
+            "ticker": "NVDA [Rev 50%]",
+            "shares": 93,
+            "entry_price": 213.66,
+            "close_price": 204.64,
+            "total_value": 9515.76,
+            "pnl_pct": -4.22,
+            "pnl_usd": -419.43
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 344.37,
+            "total_value": 19973.36,
+            "pnl_pct": 0.77,
+            "pnl_usd": 152.43
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 204.64,
+            "total_value": 18622.24,
+            "pnl_pct": -5.8,
+            "pnl_usd": -1145.69
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 70.02,
+            "total_value": 20865.96,
+            "pnl_pct": 5.2,
+            "pnl_usd": 1031.08
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 355.78,
+            "total_value": 18144.78,
+            "pnl_pct": -7.04,
+            "pnl_usd": -1373.43
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 184.87,
+            "total_value": 20705.44,
+            "pnl_pct": 4.33,
+            "pnl_usd": 860.16
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 755.72,
+            "total_value": 97487.88,
+            "pnl_pct": -2.08,
+            "pnl_usd": -2073.03
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-11-02",
+      "equities": {
+        "trend_following": 99955.63,
+        "mean_reversion": 101177.56,
+        "vol_breakout": 100000.0,
+        "risk_parity": 98637.74,
+        "rel_momentum": 102555.3,
+        "ensemble_50_50": 100566.6,
+        "buy_and_hold": 98332.6,
+        "sp500": 97429.12
+      },
+      "daily_returns": {
+        "trend_following": -1.18,
+        "mean_reversion": -0.24,
+        "vol_breakout": 0.0,
+        "risk_parity": -1.01,
+        "rel_momentum": -2.05,
+        "ensemble_50_50": -0.71,
+        "buy_and_hold": -1.16,
+        "sp500": -0.48
+      },
+      "daily_fees": {
+        "trend_following": 0.0,
+        "mean_reversion": 6.98,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 3.49,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 184.6,
+            "total_value": 20675.2,
+            "pnl_pct": 4.18,
+            "pnl_usd": 829.92
+          },
+          {
+            "ticker": "XLE",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 67.25,
+            "total_value": 19637.0,
+            "pnl_pct": -1.45,
+            "pnl_usd": -289.08
+          },
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 347.96,
+            "close_price": 338.06,
+            "total_value": 19269.6,
+            "pnl_pct": -2.84,
+            "pnl_usd": -563.87
+          }
+        ],
+        "mean_reversion": [
+          {
+            "ticker": "NVDA",
+            "shares": 93,
+            "entry_price": 213.66,
+            "close_price": 202.06,
+            "total_value": 18791.58,
+            "pnl_pct": -5.43,
+            "pnl_usd": -1078.8
+          },
+          {
+            "ticker": "AAPL",
+            "shares": 59,
+            "entry_price": 338.06,
+            "close_price": 338.06,
+            "total_value": 19945.73,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 341.74,
+            "close_price": 338.06,
+            "total_value": 19269.6,
+            "pnl_pct": -1.08,
+            "pnl_usd": -209.6
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 63,
+            "entry_price": 217.23,
+            "close_price": 202.06,
+            "total_value": 12729.78,
+            "pnl_pct": -6.98,
+            "pnl_usd": -955.71
+          },
+          {
+            "ticker": "XLE",
+            "shares": 294,
+            "entry_price": 66.56,
+            "close_price": 67.25,
+            "total_value": 19771.5,
+            "pnl_pct": 1.04,
+            "pnl_usd": 202.86
+          },
+          {
+            "ticker": "GLD",
+            "shares": 62,
+            "entry_price": 382.71,
+            "close_price": 361.65,
+            "total_value": 22422.3,
+            "pnl_pct": -5.5,
+            "pnl_usd": -1305.72
+          },
+          {
+            "ticker": "XLV",
+            "shares": 127,
+            "entry_price": 177.19,
+            "close_price": 184.6,
+            "total_value": 23444.2,
+            "pnl_pct": 4.18,
+            "pnl_usd": 941.07
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "XLE",
+            "shares": 747,
+            "entry_price": 66.56,
+            "close_price": 67.25,
+            "total_value": 50235.75,
+            "pnl_pct": 1.04,
+            "pnl_usd": 515.43
+          },
+          {
+            "ticker": "XLV",
+            "shares": 280,
+            "entry_price": 177.19,
+            "close_price": 184.6,
+            "total_value": 51688.0,
+            "pnl_pct": 4.18,
+            "pnl_usd": 2074.8
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 184.6,
+            "total_value": 10337.6,
+            "pnl_pct": 4.18,
+            "pnl_usd": 414.96
+          },
+          {
+            "ticker": "XLE [Trend 50%]",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 67.25,
+            "total_value": 9818.5,
+            "pnl_pct": -1.45,
+            "pnl_usd": -144.54
+          },
+          {
+            "ticker": "AAPL [Trend 50%]",
+            "shares": 57,
+            "entry_price": 347.96,
+            "close_price": 338.06,
+            "total_value": 9634.8,
+            "pnl_pct": -2.84,
+            "pnl_usd": -281.94
+          },
+          {
+            "ticker": "NVDA [Rev 50%]",
+            "shares": 93,
+            "entry_price": 213.66,
+            "close_price": 202.06,
+            "total_value": 9395.79,
+            "pnl_pct": -5.43,
+            "pnl_usd": -539.4
+          },
+          {
+            "ticker": "AAPL [Rev 50%]",
+            "shares": 59,
+            "entry_price": 338.06,
+            "close_price": 338.06,
+            "total_value": 9972.86,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 338.06,
+            "total_value": 19607.66,
+            "pnl_pct": -1.08,
+            "pnl_usd": -213.28
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 202.06,
+            "total_value": 18387.46,
+            "pnl_pct": -6.98,
+            "pnl_usd": -1380.47
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 67.25,
+            "total_value": 20040.5,
+            "pnl_pct": 1.04,
+            "pnl_usd": 205.62
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 361.65,
+            "total_value": 18444.15,
+            "pnl_pct": -5.5,
+            "pnl_usd": -1074.06
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 184.6,
+            "total_value": 20675.2,
+            "pnl_pct": 4.18,
+            "pnl_usd": 829.92
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 752.1,
+            "total_value": 97020.9,
+            "pnl_pct": -2.55,
+            "pnl_usd": -2540.01
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "equities": {
+        "trend_following": 99351.9,
+        "mean_reversion": 101215.22,
+        "vol_breakout": 100000.0,
+        "risk_parity": 98174.35,
+        "rel_momentum": 101967.11,
+        "ensemble_50_50": 100283.56,
+        "buy_and_hold": 98025.15,
+        "sp500": 97719.37
+      },
+      "daily_returns": {
+        "trend_following": -0.6,
+        "mean_reversion": 0.04,
+        "vol_breakout": 0.0,
+        "risk_parity": -0.47,
+        "rel_momentum": -0.57,
+        "ensemble_50_50": -0.28,
+        "buy_and_hold": -0.31,
+        "sp500": 0.3
+      },
+      "daily_fees": {
+        "trend_following": 6.67,
+        "mean_reversion": 14.44,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 10.55,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 184.02,
+            "total_value": 20610.24,
+            "pnl_pct": 3.85,
+            "pnl_usd": 764.96
+          },
+          {
+            "ticker": "XLE",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 66.68,
+            "total_value": 19470.56,
+            "pnl_pct": -2.29,
+            "pnl_usd": -455.52
+          }
+        ],
+        "mean_reversion": [
+          {
+            "ticker": "NVDA",
+            "shares": 93,
+            "entry_price": 213.66,
+            "close_price": 206.69,
+            "total_value": 19222.17,
+            "pnl_pct": -3.26,
+            "pnl_usd": -648.21
+          },
+          {
+            "ticker": "AAPL",
+            "shares": 59,
+            "entry_price": 338.06,
+            "close_price": 331.65,
+            "total_value": 19567.23,
+            "pnl_pct": -1.9,
+            "pnl_usd": -378.49
+          },
+          {
+            "ticker": "XLE",
+            "shares": 299,
+            "entry_price": 66.68,
+            "close_price": 66.68,
+            "total_value": 19937.32,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "XLV",
+            "shares": 108,
+            "entry_price": 184.02,
+            "close_price": 184.02,
+            "total_value": 19874.16,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 341.74,
+            "close_price": 331.65,
+            "total_value": 18903.94,
+            "pnl_pct": -2.95,
+            "pnl_usd": -575.26
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 63,
+            "entry_price": 217.23,
+            "close_price": 206.69,
+            "total_value": 13021.47,
+            "pnl_pct": -4.85,
+            "pnl_usd": -664.02
+          },
+          {
+            "ticker": "XLE",
+            "shares": 294,
+            "entry_price": 66.56,
+            "close_price": 66.68,
+            "total_value": 19603.92,
+            "pnl_pct": 0.18,
+            "pnl_usd": 35.28
+          },
+          {
+            "ticker": "GLD",
+            "shares": 62,
+            "entry_price": 382.71,
+            "close_price": 359.26,
+            "total_value": 22274.12,
+            "pnl_pct": -6.13,
+            "pnl_usd": -1453.9
+          },
+          {
+            "ticker": "XLV",
+            "shares": 127,
+            "entry_price": 177.19,
+            "close_price": 184.02,
+            "total_value": 23370.54,
+            "pnl_pct": 3.85,
+            "pnl_usd": 867.41
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "XLE",
+            "shares": 747,
+            "entry_price": 66.56,
+            "close_price": 66.68,
+            "total_value": 49809.96,
+            "pnl_pct": 0.18,
+            "pnl_usd": 89.64
+          },
+          {
+            "ticker": "XLV",
+            "shares": 280,
+            "entry_price": 177.19,
+            "close_price": 184.02,
+            "total_value": 51525.6,
+            "pnl_pct": 3.85,
+            "pnl_usd": 1912.4
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 184.02,
+            "total_value": 10305.12,
+            "pnl_pct": 3.85,
+            "pnl_usd": 382.48
+          },
+          {
+            "ticker": "XLE [Trend 50%]",
+            "shares": 292,
+            "entry_price": 68.24,
+            "close_price": 66.68,
+            "total_value": 9735.28,
+            "pnl_pct": -2.29,
+            "pnl_usd": -227.76
+          },
+          {
+            "ticker": "NVDA [Rev 50%]",
+            "shares": 93,
+            "entry_price": 213.66,
+            "close_price": 206.69,
+            "total_value": 9611.08,
+            "pnl_pct": -3.26,
+            "pnl_usd": -324.11
+          },
+          {
+            "ticker": "AAPL [Rev 50%]",
+            "shares": 59,
+            "entry_price": 338.06,
+            "close_price": 331.65,
+            "total_value": 9783.61,
+            "pnl_pct": -1.9,
+            "pnl_usd": -189.25
+          },
+          {
+            "ticker": "XLE [Rev 50%]",
+            "shares": 299,
+            "entry_price": 66.68,
+            "close_price": 66.68,
+            "total_value": 9968.66,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "XLV [Rev 50%]",
+            "shares": 108,
+            "entry_price": 184.02,
+            "close_price": 184.02,
+            "total_value": 9937.08,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 331.65,
+            "total_value": 19235.58,
+            "pnl_pct": -2.95,
+            "pnl_usd": -585.35
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 206.69,
+            "total_value": 18808.79,
+            "pnl_pct": -4.85,
+            "pnl_usd": -959.14
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 66.68,
+            "total_value": 19870.64,
+            "pnl_pct": 0.18,
+            "pnl_usd": 35.76
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 359.26,
+            "total_value": 18322.26,
+            "pnl_pct": -6.13,
+            "pnl_usd": -1195.95
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 184.02,
+            "total_value": 20610.24,
+            "pnl_pct": 3.85,
+            "pnl_usd": 764.96
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 754.35,
+            "total_value": 97311.15,
+            "pnl_pct": -2.26,
+            "pnl_usd": -2249.76
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-11-04",
+      "equities": {
+        "trend_following": 99053.84,
+        "mean_reversion": 101293.3,
+        "vol_breakout": 100000.0,
+        "risk_parity": 99371.58,
+        "rel_momentum": 101185.79,
+        "ensemble_50_50": 100173.57,
+        "buy_and_hold": 98813.52,
+        "sp500": 99326.71
+      },
+      "daily_returns": {
+        "trend_following": -0.3,
+        "mean_reversion": 0.08,
+        "vol_breakout": 0.0,
+        "risk_parity": 1.22,
+        "rel_momentum": -0.77,
+        "ensemble_50_50": -0.11,
+        "buy_and_hold": 0.8,
+        "sp500": 1.64
+      },
+      "daily_fees": {
+        "trend_following": 7.02,
+        "mean_reversion": 14.32,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 10.67,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 189.66,
+            "total_value": 21241.92,
+            "pnl_pct": 7.04,
+            "pnl_usd": 1396.64
+          }
+        ],
+        "mean_reversion": [
+          {
+            "ticker": "NVDA",
+            "shares": 93,
+            "entry_price": 213.66,
+            "close_price": 200.13,
+            "total_value": 18612.09,
+            "pnl_pct": -6.33,
+            "pnl_usd": -1258.29
+          },
+          {
+            "ticker": "XLE",
+            "shares": 299,
+            "entry_price": 66.68,
+            "close_price": 63.52,
+            "total_value": 18992.48,
+            "pnl_pct": -4.74,
+            "pnl_usd": -944.84
+          }
+        ],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 341.74,
+            "close_price": 349.24,
+            "total_value": 19906.95,
+            "pnl_pct": 2.2,
+            "pnl_usd": 427.75
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 63,
+            "entry_price": 217.23,
+            "close_price": 200.13,
+            "total_value": 12608.19,
+            "pnl_pct": -7.87,
+            "pnl_usd": -1077.3
+          },
+          {
+            "ticker": "XLE",
+            "shares": 294,
+            "entry_price": 66.56,
+            "close_price": 63.52,
+            "total_value": 18674.88,
+            "pnl_pct": -4.57,
+            "pnl_usd": -893.76
+          },
+          {
+            "ticker": "GLD",
+            "shares": 62,
+            "entry_price": 382.71,
+            "close_price": 372.49,
+            "total_value": 23094.38,
+            "pnl_pct": -2.67,
+            "pnl_usd": -633.64
+          },
+          {
+            "ticker": "XLV",
+            "shares": 127,
+            "entry_price": 177.19,
+            "close_price": 189.66,
+            "total_value": 24086.82,
+            "pnl_pct": 7.04,
+            "pnl_usd": 1583.69
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "XLE",
+            "shares": 747,
+            "entry_price": 66.56,
+            "close_price": 63.52,
+            "total_value": 47449.44,
+            "pnl_pct": -4.57,
+            "pnl_usd": -2270.88
+          },
+          {
+            "ticker": "XLV",
+            "shares": 280,
+            "entry_price": 177.19,
+            "close_price": 189.66,
+            "total_value": 53104.8,
+            "pnl_pct": 7.04,
+            "pnl_usd": 3491.6
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 189.66,
+            "total_value": 10620.96,
+            "pnl_pct": 7.04,
+            "pnl_usd": 698.32
+          },
+          {
+            "ticker": "NVDA [Rev 50%]",
+            "shares": 93,
+            "entry_price": 213.66,
+            "close_price": 200.13,
+            "total_value": 9306.05,
+            "pnl_pct": -6.33,
+            "pnl_usd": -629.14
+          },
+          {
+            "ticker": "XLE [Rev 50%]",
+            "shares": 299,
+            "entry_price": 66.68,
+            "close_price": 63.52,
+            "total_value": 9496.24,
+            "pnl_pct": -4.74,
+            "pnl_usd": -472.42
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 349.24,
+            "total_value": 20256.19,
+            "pnl_pct": 2.2,
+            "pnl_usd": 435.25
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 200.13,
+            "total_value": 18211.83,
+            "pnl_pct": -7.87,
+            "pnl_usd": -1556.1
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 63.52,
+            "total_value": 18928.96,
+            "pnl_pct": -4.57,
+            "pnl_usd": -905.92
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 372.49,
+            "total_value": 18996.99,
+            "pnl_pct": -2.67,
+            "pnl_usd": -521.22
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 189.66,
+            "total_value": 21241.92,
+            "pnl_pct": 7.04,
+            "pnl_usd": 1396.64
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 766.81,
+            "total_value": 98918.49,
+            "pnl_pct": -0.65,
+            "pnl_usd": -642.42
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-11-05",
+      "equities": {
+        "trend_following": 98521.84,
+        "mean_reversion": 98991.81,
+        "vol_breakout": 100000.0,
+        "risk_parity": 96927.13,
+        "rel_momentum": 98443.96,
+        "ensemble_50_50": 98756.82,
+        "buy_and_hold": 95875.59,
+        "sp500": 94965.22
+      },
+      "daily_returns": {
+        "trend_following": -0.54,
+        "mean_reversion": -2.27,
+        "vol_breakout": 0.0,
+        "risk_parity": -2.46,
+        "rel_momentum": -2.71,
+        "ensemble_50_50": -1.41,
+        "buy_and_hold": -2.97,
+        "sp500": -4.39
+      },
+      "daily_fees": {
+        "trend_following": 0.0,
+        "mean_reversion": 13.09,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 6.54,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 184.91,
+            "total_value": 20709.92,
+            "pnl_pct": 4.36,
+            "pnl_usd": 864.64
+          }
+        ],
+        "mean_reversion": [],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 341.74,
+            "close_price": 343.91,
+            "total_value": 19602.8,
+            "pnl_pct": 0.63,
+            "pnl_usd": 123.6
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 63,
+            "entry_price": 217.23,
+            "close_price": 181.6,
+            "total_value": 11440.8,
+            "pnl_pct": -16.4,
+            "pnl_usd": -2244.69
+          },
+          {
+            "ticker": "XLE",
+            "shares": 294,
+            "entry_price": 66.56,
+            "close_price": 61.63,
+            "total_value": 18119.22,
+            "pnl_pct": -7.41,
+            "pnl_usd": -1449.42
+          },
+          {
+            "ticker": "GLD",
+            "shares": 62,
+            "entry_price": 382.71,
+            "close_price": 375.49,
+            "total_value": 23280.38,
+            "pnl_pct": -1.89,
+            "pnl_usd": -447.64
+          },
+          {
+            "ticker": "XLV",
+            "shares": 127,
+            "entry_price": 177.19,
+            "close_price": 184.91,
+            "total_value": 23483.57,
+            "pnl_pct": 4.36,
+            "pnl_usd": 980.44
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "XLE",
+            "shares": 747,
+            "entry_price": 66.56,
+            "close_price": 61.63,
+            "total_value": 46037.61,
+            "pnl_pct": -7.41,
+            "pnl_usd": -3682.71
+          },
+          {
+            "ticker": "XLV",
+            "shares": 280,
+            "entry_price": 177.19,
+            "close_price": 184.91,
+            "total_value": 51774.8,
+            "pnl_pct": 4.36,
+            "pnl_usd": 2161.6
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 184.91,
+            "total_value": 10354.96,
+            "pnl_pct": 4.36,
+            "pnl_usd": 432.32
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 343.91,
+            "total_value": 19946.7,
+            "pnl_pct": 0.63,
+            "pnl_usd": 125.77
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 181.6,
+            "total_value": 16525.6,
+            "pnl_pct": -16.4,
+            "pnl_usd": -3242.33
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 61.63,
+            "total_value": 18365.74,
+            "pnl_pct": -7.41,
+            "pnl_usd": -1469.14
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 375.49,
+            "total_value": 19149.99,
+            "pnl_pct": -1.89,
+            "pnl_usd": -368.22
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 184.91,
+            "total_value": 20709.92,
+            "pnl_pct": 4.36,
+            "pnl_usd": 864.64
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 733.0,
+            "total_value": 94557.0,
+            "pnl_pct": -5.03,
+            "pnl_usd": -5003.91
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-11-06",
+      "equities": {
+        "trend_following": 98509.52,
+        "mean_reversion": 98970.26,
+        "vol_breakout": 100000.0,
+        "risk_parity": 96941.07,
+        "rel_momentum": 98405.69,
+        "ensemble_50_50": 98739.89,
+        "buy_and_hold": 96063.13,
+        "sp500": 95260.63
+      },
+      "daily_returns": {
+        "trend_following": -0.01,
+        "mean_reversion": -0.02,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.01,
+        "rel_momentum": -0.04,
+        "ensemble_50_50": -0.02,
+        "buy_and_hold": 0.2,
+        "sp500": 0.31
+      },
+      "daily_fees": {
+        "trend_following": 0.0,
+        "mean_reversion": 21.55,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 10.78,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 184.8,
+            "total_value": 20697.6,
+            "pnl_pct": 4.29,
+            "pnl_usd": 852.32
+          }
+        ],
+        "mean_reversion": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 342.11,
+            "close_price": 342.11,
+            "total_value": 19842.38,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "XLE",
+            "shares": 324,
+            "entry_price": 61.62,
+            "close_price": 61.62,
+            "total_value": 19964.88,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "XLV",
+            "shares": 108,
+            "entry_price": 184.8,
+            "close_price": 184.8,
+            "total_value": 19958.4,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 341.74,
+            "close_price": 342.11,
+            "total_value": 19500.27,
+            "pnl_pct": 0.11,
+            "pnl_usd": 21.07
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 63,
+            "entry_price": 217.23,
+            "close_price": 186.64,
+            "total_value": 11758.32,
+            "pnl_pct": -14.08,
+            "pnl_usd": -1927.17
+          },
+          {
+            "ticker": "XLE",
+            "shares": 294,
+            "entry_price": 66.56,
+            "close_price": 61.62,
+            "total_value": 18116.28,
+            "pnl_pct": -7.42,
+            "pnl_usd": -1452.36
+          },
+          {
+            "ticker": "GLD",
+            "shares": 62,
+            "entry_price": 382.71,
+            "close_price": 372.52,
+            "total_value": 23096.24,
+            "pnl_pct": -2.66,
+            "pnl_usd": -631.78
+          },
+          {
+            "ticker": "XLV",
+            "shares": 127,
+            "entry_price": 177.19,
+            "close_price": 184.8,
+            "total_value": 23469.6,
+            "pnl_pct": 4.29,
+            "pnl_usd": 966.47
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "XLE",
+            "shares": 747,
+            "entry_price": 66.56,
+            "close_price": 61.62,
+            "total_value": 46030.14,
+            "pnl_pct": -7.42,
+            "pnl_usd": -3690.18
+          },
+          {
+            "ticker": "XLV",
+            "shares": 280,
+            "entry_price": 177.19,
+            "close_price": 184.8,
+            "total_value": 51744.0,
+            "pnl_pct": 4.29,
+            "pnl_usd": 2130.8
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 184.8,
+            "total_value": 10348.8,
+            "pnl_pct": 4.29,
+            "pnl_usd": 426.16
+          },
+          {
+            "ticker": "AAPL [Rev 50%]",
+            "shares": 58,
+            "entry_price": 342.11,
+            "close_price": 342.11,
+            "total_value": 9921.19,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "XLE [Rev 50%]",
+            "shares": 324,
+            "entry_price": 61.62,
+            "close_price": 61.62,
+            "total_value": 9982.44,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "XLV [Rev 50%]",
+            "shares": 108,
+            "entry_price": 184.8,
+            "close_price": 184.8,
+            "total_value": 9979.2,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 342.11,
+            "total_value": 19842.38,
+            "pnl_pct": 0.11,
+            "pnl_usd": 21.44
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 186.64,
+            "total_value": 16984.24,
+            "pnl_pct": -14.08,
+            "pnl_usd": -2783.69
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 61.62,
+            "total_value": 18362.76,
+            "pnl_pct": -7.42,
+            "pnl_usd": -1472.12
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 372.52,
+            "total_value": 18998.52,
+            "pnl_pct": -2.66,
+            "pnl_usd": -519.69
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 184.8,
+            "total_value": 20697.6,
+            "pnl_pct": 4.29,
+            "pnl_usd": 852.32
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 735.29,
+            "total_value": 94852.41,
+            "pnl_pct": -4.73,
+            "pnl_usd": -4708.5
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "equities": {
+        "trend_following": 98904.88,
+        "mean_reversion": 99923.18,
+        "vol_breakout": 100000.0,
+        "risk_parity": 97889.86,
+        "rel_momentum": 99633.13,
+        "ensemble_50_50": 99414.03,
+        "buy_and_hold": 96668.29,
+        "sp500": 97505.23
+      },
+      "daily_returns": {
+        "trend_following": 0.4,
+        "mean_reversion": 0.96,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.98,
+        "rel_momentum": 1.25,
+        "ensemble_50_50": 0.68,
+        "buy_and_hold": 0.63,
+        "sp500": 2.36
+      },
+      "daily_fees": {
+        "trend_following": 0.0,
+        "mean_reversion": 14.2,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 7.1,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 188.33,
+            "total_value": 21092.96,
+            "pnl_pct": 6.29,
+            "pnl_usd": 1247.68
+          }
+        ],
+        "mean_reversion": [
+          {
+            "ticker": "XLE",
+            "shares": 324,
+            "entry_price": 61.62,
+            "close_price": 61.94,
+            "total_value": 20068.56,
+            "pnl_pct": 0.52,
+            "pnl_usd": 103.68
+          }
+        ],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 341.74,
+            "close_price": 350.42,
+            "total_value": 19974.15,
+            "pnl_pct": 2.54,
+            "pnl_usd": 494.95
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 63,
+            "entry_price": 217.23,
+            "close_price": 178.67,
+            "total_value": 11256.21,
+            "pnl_pct": -17.75,
+            "pnl_usd": -2429.28
+          },
+          {
+            "ticker": "XLE",
+            "shares": 294,
+            "entry_price": 66.56,
+            "close_price": 61.94,
+            "total_value": 18210.36,
+            "pnl_pct": -6.94,
+            "pnl_usd": -1358.28
+          },
+          {
+            "ticker": "GLD",
+            "shares": 62,
+            "entry_price": 382.71,
+            "close_price": 379.53,
+            "total_value": 23530.86,
+            "pnl_pct": -0.83,
+            "pnl_usd": -197.16
+          },
+          {
+            "ticker": "XLV",
+            "shares": 127,
+            "entry_price": 177.19,
+            "close_price": 188.33,
+            "total_value": 23917.91,
+            "pnl_pct": 6.29,
+            "pnl_usd": 1414.78
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "XLE",
+            "shares": 747,
+            "entry_price": 66.56,
+            "close_price": 61.94,
+            "total_value": 46269.18,
+            "pnl_pct": -6.94,
+            "pnl_usd": -3451.14
+          },
+          {
+            "ticker": "XLV",
+            "shares": 280,
+            "entry_price": 177.19,
+            "close_price": 188.33,
+            "total_value": 52732.4,
+            "pnl_pct": 6.29,
+            "pnl_usd": 3119.2
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 188.33,
+            "total_value": 10546.48,
+            "pnl_pct": 6.29,
+            "pnl_usd": 623.84
+          },
+          {
+            "ticker": "XLE [Rev 50%]",
+            "shares": 324,
+            "entry_price": 61.62,
+            "close_price": 61.94,
+            "total_value": 10034.28,
+            "pnl_pct": 0.52,
+            "pnl_usd": 51.84
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 350.42,
+            "total_value": 20324.58,
+            "pnl_pct": 2.54,
+            "pnl_usd": 503.64
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 178.67,
+            "total_value": 16258.97,
+            "pnl_pct": -17.75,
+            "pnl_usd": -3508.96
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 61.94,
+            "total_value": 18458.12,
+            "pnl_pct": -6.94,
+            "pnl_usd": -1376.76
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 379.53,
+            "total_value": 19356.03,
+            "pnl_pct": -0.83,
+            "pnl_usd": -162.18
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 188.33,
+            "total_value": 21092.96,
+            "pnl_pct": 6.29,
+            "pnl_usd": 1247.68
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 752.69,
+            "total_value": 97097.01,
+            "pnl_pct": -2.47,
+            "pnl_usd": -2463.9
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-11-10",
+      "equities": {
+        "trend_following": 98966.48,
+        "mean_reversion": 100002.99,
+        "vol_breakout": 100000.0,
+        "risk_parity": 96668.24,
+        "rel_momentum": 99988.82,
+        "ensemble_50_50": 99484.73,
+        "buy_and_hold": 95275.35,
+        "sp500": 97147.9
+      },
+      "daily_returns": {
+        "trend_following": 0.06,
+        "mean_reversion": 0.08,
+        "vol_breakout": 0.0,
+        "risk_parity": -1.25,
+        "rel_momentum": 0.36,
+        "ensemble_50_50": 0.07,
+        "buy_and_hold": -1.44,
+        "sp500": -0.37
+      },
+      "daily_fees": {
+        "trend_following": 0.0,
+        "mean_reversion": 7.67,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 3.83,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 188.88,
+            "total_value": 21154.56,
+            "pnl_pct": 6.6,
+            "pnl_usd": 1309.28
+          }
+        ],
+        "mean_reversion": [],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 341.74,
+            "close_price": 348.25,
+            "total_value": 19849.99,
+            "pnl_pct": 1.9,
+            "pnl_usd": 370.79
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 63,
+            "entry_price": 217.23,
+            "close_price": 168.89,
+            "total_value": 10640.07,
+            "pnl_pct": -22.25,
+            "pnl_usd": -3045.42
+          },
+          {
+            "ticker": "XLE",
+            "shares": 294,
+            "entry_price": 66.56,
+            "close_price": 62.21,
+            "total_value": 18289.74,
+            "pnl_pct": -6.54,
+            "pnl_usd": -1278.9
+          },
+          {
+            "ticker": "GLD",
+            "shares": 62,
+            "entry_price": 382.71,
+            "close_price": 369.36,
+            "total_value": 22900.32,
+            "pnl_pct": -3.49,
+            "pnl_usd": -827.7
+          },
+          {
+            "ticker": "XLV",
+            "shares": 127,
+            "entry_price": 177.19,
+            "close_price": 188.88,
+            "total_value": 23987.76,
+            "pnl_pct": 6.6,
+            "pnl_usd": 1484.63
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "XLE",
+            "shares": 747,
+            "entry_price": 66.56,
+            "close_price": 62.21,
+            "total_value": 46470.87,
+            "pnl_pct": -6.54,
+            "pnl_usd": -3249.45
+          },
+          {
+            "ticker": "XLV",
+            "shares": 280,
+            "entry_price": 177.19,
+            "close_price": 188.88,
+            "total_value": 52886.4,
+            "pnl_pct": 6.6,
+            "pnl_usd": 3273.2
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 188.88,
+            "total_value": 10577.28,
+            "pnl_pct": 6.6,
+            "pnl_usd": 654.64
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 348.25,
+            "total_value": 20198.23,
+            "pnl_pct": 1.9,
+            "pnl_usd": 377.29
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 168.89,
+            "total_value": 15368.99,
+            "pnl_pct": -22.25,
+            "pnl_usd": -4398.94
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 62.21,
+            "total_value": 18538.58,
+            "pnl_pct": -6.54,
+            "pnl_usd": -1296.3
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 369.36,
+            "total_value": 18837.36,
+            "pnl_pct": -3.49,
+            "pnl_usd": -680.85
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 188.88,
+            "total_value": 21154.56,
+            "pnl_pct": 6.6,
+            "pnl_usd": 1309.28
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 749.92,
+            "total_value": 96739.68,
+            "pnl_pct": -2.83,
+            "pnl_usd": -2821.23
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-11-11",
+      "equities": {
+        "trend_following": 98967.35,
+        "mean_reversion": 100002.99,
+        "vol_breakout": 100000.0,
+        "risk_parity": 97468.84,
+        "rel_momentum": 100874.94,
+        "ensemble_50_50": 99485.17,
+        "buy_and_hold": 96268.27,
+        "sp500": 98423.71
+      },
+      "daily_returns": {
+        "trend_following": 0.0,
+        "mean_reversion": 0.0,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.83,
+        "rel_momentum": 0.89,
+        "ensemble_50_50": 0.0,
+        "buy_and_hold": 1.04,
+        "sp500": 1.31
+      },
+      "daily_fees": {
+        "trend_following": 6.97,
+        "mean_reversion": 0.0,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 3.48,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 188.95,
+            "total_value": 21162.4,
+            "pnl_pct": 6.64,
+            "pnl_usd": 1317.12
+          },
+          {
+            "ticker": "AAPL",
+            "shares": 56,
+            "entry_price": 355.36,
+            "close_price": 355.36,
+            "total_value": 19900.16,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "mean_reversion": [],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 57,
+            "entry_price": 341.74,
+            "close_price": 355.36,
+            "total_value": 20255.52,
+            "pnl_pct": 3.99,
+            "pnl_usd": 776.32
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 63,
+            "entry_price": 217.23,
+            "close_price": 173.73,
+            "total_value": 10944.99,
+            "pnl_pct": -20.02,
+            "pnl_usd": -2740.5
+          },
+          {
+            "ticker": "XLE",
+            "shares": 294,
+            "entry_price": 66.56,
+            "close_price": 63.37,
+            "total_value": 18630.78,
+            "pnl_pct": -4.79,
+            "pnl_usd": -937.86
+          },
+          {
+            "ticker": "GLD",
+            "shares": 62,
+            "entry_price": 382.71,
+            "close_price": 365.17,
+            "total_value": 22640.54,
+            "pnl_pct": -4.58,
+            "pnl_usd": -1087.48
+          },
+          {
+            "ticker": "XLV",
+            "shares": 127,
+            "entry_price": 177.19,
+            "close_price": 188.95,
+            "total_value": 23996.65,
+            "pnl_pct": 6.64,
+            "pnl_usd": 1493.52
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "XLE",
+            "shares": 747,
+            "entry_price": 66.56,
+            "close_price": 63.37,
+            "total_value": 47337.39,
+            "pnl_pct": -4.79,
+            "pnl_usd": -2382.93
+          },
+          {
+            "ticker": "XLV",
+            "shares": 280,
+            "entry_price": 177.19,
+            "close_price": 188.95,
+            "total_value": 52906.0,
+            "pnl_pct": 6.64,
+            "pnl_usd": 3292.8
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 188.95,
+            "total_value": 10581.2,
+            "pnl_pct": 6.64,
+            "pnl_usd": 658.56
+          },
+          {
+            "ticker": "AAPL [Trend 50%]",
+            "shares": 56,
+            "entry_price": 355.36,
+            "close_price": 355.36,
+            "total_value": 9950.08,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 355.36,
+            "total_value": 20610.88,
+            "pnl_pct": 3.99,
+            "pnl_usd": 789.94
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 173.73,
+            "total_value": 15809.43,
+            "pnl_pct": -20.02,
+            "pnl_usd": -3958.5
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 63.37,
+            "total_value": 18884.26,
+            "pnl_pct": -4.79,
+            "pnl_usd": -950.62
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 365.17,
+            "total_value": 18623.67,
+            "pnl_pct": -4.58,
+            "pnl_usd": -894.54
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 188.95,
+            "total_value": 21162.4,
+            "pnl_pct": 6.64,
+            "pnl_usd": 1317.12
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 759.81,
+            "total_value": 98015.49,
+            "pnl_pct": -1.55,
+            "pnl_usd": -1545.42
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-11-12",
+      "equities": {
+        "trend_following": 98815.03,
+        "mean_reversion": 99996.02,
+        "vol_breakout": 100000.0,
+        "risk_parity": 96400.83,
+        "rel_momentum": 101210.68,
+        "ensemble_50_50": 99405.52,
+        "buy_and_hold": 95190.65,
+        "sp500": 98076.7
+      },
+      "daily_returns": {
+        "trend_following": -0.15,
+        "mean_reversion": -0.01,
+        "vol_breakout": 0.0,
+        "risk_parity": -1.1,
+        "rel_momentum": 0.33,
+        "ensemble_50_50": -0.08,
+        "buy_and_hold": -1.12,
+        "sp500": -0.35
+      },
+      "daily_fees": {
+        "trend_following": 0.0,
+        "mean_reversion": 6.97,
+        "vol_breakout": 0.0,
+        "risk_parity": 68.27,
+        "rel_momentum": 67.78,
+        "ensemble_50_50": 3.48,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 187.83,
+            "total_value": 21036.96,
+            "pnl_pct": 6.0,
+            "pnl_usd": 1191.68
+          },
+          {
+            "ticker": "AAPL",
+            "shares": 56,
+            "entry_price": 355.36,
+            "close_price": 354.88,
+            "total_value": 19873.28,
+            "pnl_pct": -0.14,
+            "pnl_usd": -26.88
+          }
+        ],
+        "mean_reversion": [
+          {
+            "ticker": "XLV",
+            "shares": 106,
+            "entry_price": 187.83,
+            "close_price": 187.83,
+            "total_value": 19909.98,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 54,
+            "entry_price": 354.88,
+            "close_price": 354.88,
+            "total_value": 19163.52,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 48,
+            "entry_price": 166.19,
+            "close_price": 166.19,
+            "total_value": 7977.12,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "XLE",
+            "shares": 295,
+            "entry_price": 64.33,
+            "close_price": 64.33,
+            "total_value": 18977.35,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "GLD",
+            "shares": 67,
+            "entry_price": 354.89,
+            "close_price": 354.89,
+            "total_value": 23777.63,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "XLV",
+            "shares": 137,
+            "entry_price": 187.83,
+            "close_price": 187.83,
+            "total_value": 25732.71,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "AAPL",
+            "shares": 141,
+            "entry_price": 354.88,
+            "close_price": 354.88,
+            "total_value": 50038.08,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "XLV",
+            "shares": 268,
+            "entry_price": 187.83,
+            "close_price": 187.83,
+            "total_value": 50338.44,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 187.83,
+            "total_value": 10518.48,
+            "pnl_pct": 6.0,
+            "pnl_usd": 595.84
+          },
+          {
+            "ticker": "AAPL [Trend 50%]",
+            "shares": 56,
+            "entry_price": 355.36,
+            "close_price": 354.88,
+            "total_value": 9936.64,
+            "pnl_pct": -0.14,
+            "pnl_usd": -13.44
+          },
+          {
+            "ticker": "XLV [Rev 50%]",
+            "shares": 106,
+            "entry_price": 187.83,
+            "close_price": 187.83,
+            "total_value": 9954.99,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 354.88,
+            "total_value": 20583.04,
+            "pnl_pct": 3.84,
+            "pnl_usd": 762.1
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 166.19,
+            "total_value": 15123.29,
+            "pnl_pct": -23.5,
+            "pnl_usd": -4644.64
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 64.33,
+            "total_value": 19170.34,
+            "pnl_pct": -3.35,
+            "pnl_usd": -664.54
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 354.89,
+            "total_value": 18099.39,
+            "pnl_pct": -7.27,
+            "pnl_usd": -1418.82
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 187.83,
+            "total_value": 21036.96,
+            "pnl_pct": 6.0,
+            "pnl_usd": 1191.68
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 757.12,
+            "total_value": 97668.48,
+            "pnl_pct": -1.9,
+            "pnl_usd": -1892.43
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "equities": {
+        "trend_following": 99007.11,
+        "mean_reversion": 100097.13,
+        "vol_breakout": 100000.0,
+        "risk_parity": 96678.68,
+        "rel_momentum": 101680.03,
+        "ensemble_50_50": 99552.12,
+        "buy_and_hold": 95297.87,
+        "sp500": 97721.95
+      },
+      "daily_returns": {
+        "trend_following": 0.19,
+        "mean_reversion": 0.1,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.29,
+        "rel_momentum": 0.46,
+        "ensemble_50_50": 0.15,
+        "buy_and_hold": 0.11,
+        "sp500": -0.36
+      },
+      "daily_fees": {
+        "trend_following": 0.0,
+        "mean_reversion": 7.01,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 3.5,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 188.85,
+            "total_value": 21151.2,
+            "pnl_pct": 6.58,
+            "pnl_usd": 1305.92
+          },
+          {
+            "ticker": "AAPL",
+            "shares": 56,
+            "entry_price": 355.36,
+            "close_price": 356.27,
+            "total_value": 19951.12,
+            "pnl_pct": 0.26,
+            "pnl_usd": 50.96
+          }
+        ],
+        "mean_reversion": [],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 54,
+            "entry_price": 354.88,
+            "close_price": 356.27,
+            "total_value": 19238.58,
+            "pnl_pct": 0.39,
+            "pnl_usd": 75.06
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 48,
+            "entry_price": 166.19,
+            "close_price": 162.85,
+            "total_value": 7816.8,
+            "pnl_pct": -2.01,
+            "pnl_usd": -160.32
+          },
+          {
+            "ticker": "XLE",
+            "shares": 295,
+            "entry_price": 64.33,
+            "close_price": 64.96,
+            "total_value": 19163.2,
+            "pnl_pct": 0.98,
+            "pnl_usd": 185.85
+          },
+          {
+            "ticker": "GLD",
+            "shares": 67,
+            "entry_price": 354.89,
+            "close_price": 355.45,
+            "total_value": 23815.15,
+            "pnl_pct": 0.16,
+            "pnl_usd": 37.52
+          },
+          {
+            "ticker": "XLV",
+            "shares": 137,
+            "entry_price": 187.83,
+            "close_price": 188.85,
+            "total_value": 25872.45,
+            "pnl_pct": 0.54,
+            "pnl_usd": 139.74
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "AAPL",
+            "shares": 141,
+            "entry_price": 354.88,
+            "close_price": 356.27,
+            "total_value": 50234.07,
+            "pnl_pct": 0.39,
+            "pnl_usd": 195.99
+          },
+          {
+            "ticker": "XLV",
+            "shares": 268,
+            "entry_price": 187.83,
+            "close_price": 188.85,
+            "total_value": 50611.8,
+            "pnl_pct": 0.54,
+            "pnl_usd": 273.36
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 188.85,
+            "total_value": 10575.6,
+            "pnl_pct": 6.58,
+            "pnl_usd": 652.96
+          },
+          {
+            "ticker": "AAPL [Trend 50%]",
+            "shares": 56,
+            "entry_price": 355.36,
+            "close_price": 356.27,
+            "total_value": 9975.56,
+            "pnl_pct": 0.26,
+            "pnl_usd": 25.48
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 356.27,
+            "total_value": 20663.66,
+            "pnl_pct": 4.25,
+            "pnl_usd": 842.72
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 162.85,
+            "total_value": 14819.35,
+            "pnl_pct": -25.03,
+            "pnl_usd": -4948.58
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 64.96,
+            "total_value": 19358.08,
+            "pnl_pct": -2.4,
+            "pnl_usd": -476.8
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 355.45,
+            "total_value": 18127.95,
+            "pnl_pct": -7.12,
+            "pnl_usd": -1390.26
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 188.85,
+            "total_value": 21151.2,
+            "pnl_pct": 6.58,
+            "pnl_usd": 1305.92
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 754.37,
+            "total_value": 97313.73,
+            "pnl_pct": -2.26,
+            "pnl_usd": -2247.18
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-11-16",
+      "equities": {
+        "trend_following": 98703.03,
+        "mean_reversion": 100097.13,
+        "vol_breakout": 100000.0,
+        "risk_parity": 95491.76,
+        "rel_momentum": 100927.98,
+        "ensemble_50_50": 99400.08,
+        "buy_and_hold": 93869.22,
+        "sp500": 95861.77
+      },
+      "daily_returns": {
+        "trend_following": -0.31,
+        "mean_reversion": 0.0,
+        "vol_breakout": 0.0,
+        "risk_parity": -1.23,
+        "rel_momentum": -0.74,
+        "ensemble_50_50": -0.15,
+        "buy_and_hold": -1.5,
+        "sp500": -1.9
+      },
+      "daily_fees": {
+        "trend_following": 0.0,
+        "mean_reversion": 0.0,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 0.0,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 187.88,
+            "total_value": 21042.56,
+            "pnl_pct": 6.03,
+            "pnl_usd": 1197.28
+          },
+          {
+            "ticker": "AAPL",
+            "shares": 56,
+            "entry_price": 355.36,
+            "close_price": 352.78,
+            "total_value": 19755.68,
+            "pnl_pct": -0.73,
+            "pnl_usd": -144.48
+          }
+        ],
+        "mean_reversion": [],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 54,
+            "entry_price": 354.88,
+            "close_price": 352.78,
+            "total_value": 19050.12,
+            "pnl_pct": -0.59,
+            "pnl_usd": -113.4
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 48,
+            "entry_price": 166.19,
+            "close_price": 156.14,
+            "total_value": 7494.72,
+            "pnl_pct": -6.05,
+            "pnl_usd": -482.4
+          },
+          {
+            "ticker": "XLE",
+            "shares": 295,
+            "entry_price": 64.33,
+            "close_price": 63.69,
+            "total_value": 18788.55,
+            "pnl_pct": -0.99,
+            "pnl_usd": -188.8
+          },
+          {
+            "ticker": "GLD",
+            "shares": 67,
+            "entry_price": 354.89,
+            "close_price": 352.93,
+            "total_value": 23646.31,
+            "pnl_pct": -0.55,
+            "pnl_usd": -131.32
+          },
+          {
+            "ticker": "XLV",
+            "shares": 137,
+            "entry_price": 187.83,
+            "close_price": 187.88,
+            "total_value": 25739.56,
+            "pnl_pct": 0.03,
+            "pnl_usd": 6.85
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "AAPL",
+            "shares": 141,
+            "entry_price": 354.88,
+            "close_price": 352.78,
+            "total_value": 49741.98,
+            "pnl_pct": -0.59,
+            "pnl_usd": -296.1
+          },
+          {
+            "ticker": "XLV",
+            "shares": 268,
+            "entry_price": 187.83,
+            "close_price": 187.88,
+            "total_value": 50351.84,
+            "pnl_pct": 0.03,
+            "pnl_usd": 13.4
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 187.88,
+            "total_value": 10521.28,
+            "pnl_pct": 6.03,
+            "pnl_usd": 598.64
+          },
+          {
+            "ticker": "AAPL [Trend 50%]",
+            "shares": 56,
+            "entry_price": 355.36,
+            "close_price": 352.78,
+            "total_value": 9877.84,
+            "pnl_pct": -0.73,
+            "pnl_usd": -72.24
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 352.78,
+            "total_value": 20461.24,
+            "pnl_pct": 3.23,
+            "pnl_usd": 640.3
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 156.14,
+            "total_value": 14208.74,
+            "pnl_pct": -28.12,
+            "pnl_usd": -5559.19
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 63.69,
+            "total_value": 18979.62,
+            "pnl_pct": -4.31,
+            "pnl_usd": -855.26
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 352.93,
+            "total_value": 17999.43,
+            "pnl_pct": -7.78,
+            "pnl_usd": -1518.78
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 187.88,
+            "total_value": 21042.56,
+            "pnl_pct": 6.03,
+            "pnl_usd": 1197.28
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 739.95,
+            "total_value": 95453.55,
+            "pnl_pct": -4.13,
+            "pnl_usd": -4107.36
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-11-17",
+      "equities": {
+        "trend_following": 98358.63,
+        "mean_reversion": 100075.71,
+        "vol_breakout": 100000.0,
+        "risk_parity": 94922.96,
+        "rel_momentum": 100097.79,
+        "ensemble_50_50": 99217.17,
+        "buy_and_hold": 93339.91,
+        "sp500": 94892.98
+      },
+      "daily_returns": {
+        "trend_following": -0.35,
+        "mean_reversion": -0.02,
+        "vol_breakout": 0.0,
+        "risk_parity": -0.6,
+        "rel_momentum": -0.82,
+        "ensemble_50_50": -0.18,
+        "buy_and_hold": -0.56,
+        "sp500": -1.01
+      },
+      "daily_fees": {
+        "trend_following": 0.0,
+        "mean_reversion": 21.42,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 10.71,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 185.24,
+            "total_value": 20746.88,
+            "pnl_pct": 4.54,
+            "pnl_usd": 901.6
+          },
+          {
+            "ticker": "AAPL",
+            "shares": 56,
+            "entry_price": 355.36,
+            "close_price": 351.91,
+            "total_value": 19706.96,
+            "pnl_pct": -0.97,
+            "pnl_usd": -193.2
+          }
+        ],
+        "mean_reversion": [
+          {
+            "ticker": "AAPL",
+            "shares": 56,
+            "entry_price": 351.91,
+            "close_price": 351.91,
+            "total_value": 19706.96,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "XLE",
+            "shares": 315,
+            "entry_price": 63.36,
+            "close_price": 63.36,
+            "total_value": 19958.4,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "XLV",
+            "shares": 107,
+            "entry_price": 185.24,
+            "close_price": 185.24,
+            "total_value": 19820.68,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 54,
+            "entry_price": 354.88,
+            "close_price": 351.91,
+            "total_value": 19003.14,
+            "pnl_pct": -0.84,
+            "pnl_usd": -160.38
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 48,
+            "entry_price": 166.19,
+            "close_price": 155.46,
+            "total_value": 7462.08,
+            "pnl_pct": -6.46,
+            "pnl_usd": -515.04
+          },
+          {
+            "ticker": "XLE",
+            "shares": 295,
+            "entry_price": 64.33,
+            "close_price": 63.36,
+            "total_value": 18691.2,
+            "pnl_pct": -1.51,
+            "pnl_usd": -286.15
+          },
+          {
+            "ticker": "GLD",
+            "shares": 67,
+            "entry_price": 354.89,
+            "close_price": 352.48,
+            "total_value": 23616.16,
+            "pnl_pct": -0.68,
+            "pnl_usd": -161.47
+          },
+          {
+            "ticker": "XLV",
+            "shares": 137,
+            "entry_price": 187.83,
+            "close_price": 185.24,
+            "total_value": 25377.88,
+            "pnl_pct": -1.38,
+            "pnl_usd": -354.83
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "AAPL",
+            "shares": 141,
+            "entry_price": 354.88,
+            "close_price": 351.91,
+            "total_value": 49619.31,
+            "pnl_pct": -0.84,
+            "pnl_usd": -418.77
+          },
+          {
+            "ticker": "XLV",
+            "shares": 268,
+            "entry_price": 187.83,
+            "close_price": 185.24,
+            "total_value": 49644.32,
+            "pnl_pct": -1.38,
+            "pnl_usd": -694.12
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "XLV [Trend 50%]",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 185.24,
+            "total_value": 10373.44,
+            "pnl_pct": 4.54,
+            "pnl_usd": 450.8
+          },
+          {
+            "ticker": "AAPL [Trend 50%]",
+            "shares": 56,
+            "entry_price": 355.36,
+            "close_price": 351.91,
+            "total_value": 9853.48,
+            "pnl_pct": -0.97,
+            "pnl_usd": -96.6
+          },
+          {
+            "ticker": "AAPL [Rev 50%]",
+            "shares": 56,
+            "entry_price": 351.91,
+            "close_price": 351.91,
+            "total_value": 9853.48,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "XLE [Rev 50%]",
+            "shares": 315,
+            "entry_price": 63.36,
+            "close_price": 63.36,
+            "total_value": 9979.2,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          },
+          {
+            "ticker": "XLV [Rev 50%]",
+            "shares": 107,
+            "entry_price": 185.24,
+            "close_price": 185.24,
+            "total_value": 9910.34,
+            "pnl_pct": 0.0,
+            "pnl_usd": 0.0
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 351.91,
+            "total_value": 20410.78,
+            "pnl_pct": 2.98,
+            "pnl_usd": 589.84
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 155.46,
+            "total_value": 14146.86,
+            "pnl_pct": -28.44,
+            "pnl_usd": -5621.07
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 63.36,
+            "total_value": 18881.28,
+            "pnl_pct": -4.81,
+            "pnl_usd": -953.6
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 352.48,
+            "total_value": 17976.48,
+            "pnl_pct": -7.9,
+            "pnl_usd": -1541.73
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 185.24,
+            "total_value": 20746.88,
+            "pnl_pct": 4.54,
+            "pnl_usd": 901.6
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 732.44,
+            "total_value": 94484.76,
+            "pnl_pct": -5.1,
+            "pnl_usd": -5076.15
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-11-18",
+      "equities": {
+        "trend_following": 97925.94,
+        "mean_reversion": 99018.41,
+        "vol_breakout": 100000.0,
+        "risk_parity": 92811.45,
+        "rel_momentum": 99083.17,
+        "ensemble_50_50": 98472.17,
+        "buy_and_hold": 91313.24,
+        "sp500": 94604.02
+      },
+      "daily_returns": {
+        "trend_following": -0.44,
+        "mean_reversion": -1.06,
+        "vol_breakout": 0.0,
+        "risk_parity": -2.22,
+        "rel_momentum": -1.01,
+        "ensemble_50_50": -0.75,
+        "buy_and_hold": -2.17,
+        "sp500": -0.3
+      },
+      "daily_fees": {
+        "trend_following": 7.09,
+        "mean_reversion": 0.0,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 3.54,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "AAPL",
+            "shares": 56,
+            "entry_price": 355.36,
+            "close_price": 352.45,
+            "total_value": 19737.2,
+            "pnl_pct": -0.82,
+            "pnl_usd": -162.96
+          }
+        ],
+        "mean_reversion": [
+          {
+            "ticker": "AAPL",
+            "shares": 56,
+            "entry_price": 351.91,
+            "close_price": 352.45,
+            "total_value": 19737.2,
+            "pnl_pct": 0.15,
+            "pnl_usd": 30.24
+          },
+          {
+            "ticker": "XLE",
+            "shares": 315,
+            "entry_price": 63.36,
+            "close_price": 61.29,
+            "total_value": 19306.35,
+            "pnl_pct": -3.27,
+            "pnl_usd": -652.05
+          },
+          {
+            "ticker": "XLV",
+            "shares": 107,
+            "entry_price": 185.24,
+            "close_price": 181.17,
+            "total_value": 19385.19,
+            "pnl_pct": -2.2,
+            "pnl_usd": -435.49
+          }
+        ],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 54,
+            "entry_price": 354.88,
+            "close_price": 352.45,
+            "total_value": 19032.3,
+            "pnl_pct": -0.68,
+            "pnl_usd": -131.22
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 48,
+            "entry_price": 166.19,
+            "close_price": 150.96,
+            "total_value": 7246.08,
+            "pnl_pct": -9.16,
+            "pnl_usd": -731.04
+          },
+          {
+            "ticker": "XLE",
+            "shares": 295,
+            "entry_price": 64.33,
+            "close_price": 61.29,
+            "total_value": 18080.55,
+            "pnl_pct": -4.73,
+            "pnl_usd": -896.8
+          },
+          {
+            "ticker": "GLD",
+            "shares": 67,
+            "entry_price": 354.89,
+            "close_price": 341.19,
+            "total_value": 22859.73,
+            "pnl_pct": -3.86,
+            "pnl_usd": -917.9
+          },
+          {
+            "ticker": "XLV",
+            "shares": 137,
+            "entry_price": 187.83,
+            "close_price": 181.17,
+            "total_value": 24820.29,
+            "pnl_pct": -3.55,
+            "pnl_usd": -912.42
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "AAPL",
+            "shares": 141,
+            "entry_price": 354.88,
+            "close_price": 352.45,
+            "total_value": 49695.45,
+            "pnl_pct": -0.68,
+            "pnl_usd": -342.63
+          },
+          {
+            "ticker": "XLV",
+            "shares": 268,
+            "entry_price": 187.83,
+            "close_price": 181.17,
+            "total_value": 48553.56,
+            "pnl_pct": -3.55,
+            "pnl_usd": -1784.88
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "AAPL [Trend 50%]",
+            "shares": 56,
+            "entry_price": 355.36,
+            "close_price": 352.45,
+            "total_value": 9868.6,
+            "pnl_pct": -0.82,
+            "pnl_usd": -81.48
+          },
+          {
+            "ticker": "AAPL [Rev 50%]",
+            "shares": 56,
+            "entry_price": 351.91,
+            "close_price": 352.45,
+            "total_value": 9868.6,
+            "pnl_pct": 0.15,
+            "pnl_usd": 15.12
+          },
+          {
+            "ticker": "XLE [Rev 50%]",
+            "shares": 315,
+            "entry_price": 63.36,
+            "close_price": 61.29,
+            "total_value": 9653.17,
+            "pnl_pct": -3.27,
+            "pnl_usd": -326.02
+          },
+          {
+            "ticker": "XLV [Rev 50%]",
+            "shares": 107,
+            "entry_price": 185.24,
+            "close_price": 181.17,
+            "total_value": 9692.59,
+            "pnl_pct": -2.2,
+            "pnl_usd": -217.75
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 352.45,
+            "total_value": 20442.1,
+            "pnl_pct": 3.13,
+            "pnl_usd": 621.16
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 150.96,
+            "total_value": 13737.36,
+            "pnl_pct": -30.51,
+            "pnl_usd": -6030.57
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 61.29,
+            "total_value": 18264.42,
+            "pnl_pct": -7.92,
+            "pnl_usd": -1570.46
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 341.19,
+            "total_value": 17400.69,
+            "pnl_pct": -10.85,
+            "pnl_usd": -2117.52
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 181.17,
+            "total_value": 20291.04,
+            "pnl_pct": 2.25,
+            "pnl_usd": 445.76
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 730.2,
+            "total_value": 94195.8,
+            "pnl_pct": -5.39,
+            "pnl_usd": -5365.11
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-11-19",
+      "equities": {
+        "trend_following": 97744.5,
+        "mean_reversion": 98314.0,
+        "vol_breakout": 100000.0,
+        "risk_parity": 91368.51,
+        "rel_momentum": 97632.05,
+        "ensemble_50_50": 98029.25,
+        "buy_and_hold": 89830.91,
+        "sp500": 92755.45
+      },
+      "daily_returns": {
+        "trend_following": -0.19,
+        "mean_reversion": -0.71,
+        "vol_breakout": 0.0,
+        "risk_parity": -1.55,
+        "rel_momentum": -1.46,
+        "ensemble_50_50": -0.45,
+        "buy_and_hold": -1.62,
+        "sp500": -1.95
+      },
+      "daily_fees": {
+        "trend_following": 0.0,
+        "mean_reversion": 0.0,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 0.0,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "AAPL",
+            "shares": 56,
+            "entry_price": 355.36,
+            "close_price": 349.21,
+            "total_value": 19555.76,
+            "pnl_pct": -1.73,
+            "pnl_usd": -344.4
+          }
+        ],
+        "mean_reversion": [
+          {
+            "ticker": "AAPL",
+            "shares": 56,
+            "entry_price": 351.91,
+            "close_price": 349.21,
+            "total_value": 19555.76,
+            "pnl_pct": -0.77,
+            "pnl_usd": -151.2
+          },
+          {
+            "ticker": "XLE",
+            "shares": 315,
+            "entry_price": 63.36,
+            "close_price": 60.89,
+            "total_value": 19180.35,
+            "pnl_pct": -3.9,
+            "pnl_usd": -778.05
+          },
+          {
+            "ticker": "XLV",
+            "shares": 107,
+            "entry_price": 185.24,
+            "close_price": 177.46,
+            "total_value": 18988.22,
+            "pnl_pct": -4.2,
+            "pnl_usd": -832.46
+          }
+        ],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 54,
+            "entry_price": 354.88,
+            "close_price": 349.21,
+            "total_value": 18857.34,
+            "pnl_pct": -1.6,
+            "pnl_usd": -306.18
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 48,
+            "entry_price": 166.19,
+            "close_price": 145.98,
+            "total_value": 7007.04,
+            "pnl_pct": -12.16,
+            "pnl_usd": -970.08
+          },
+          {
+            "ticker": "XLE",
+            "shares": 295,
+            "entry_price": 64.33,
+            "close_price": 60.89,
+            "total_value": 17962.55,
+            "pnl_pct": -5.35,
+            "pnl_usd": -1014.8
+          },
+          {
+            "ticker": "GLD",
+            "shares": 67,
+            "entry_price": 354.89,
+            "close_price": 335.18,
+            "total_value": 22457.06,
+            "pnl_pct": -5.55,
+            "pnl_usd": -1320.57
+          },
+          {
+            "ticker": "XLV",
+            "shares": 137,
+            "entry_price": 187.83,
+            "close_price": 177.46,
+            "total_value": 24312.02,
+            "pnl_pct": -5.52,
+            "pnl_usd": -1420.69
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "AAPL",
+            "shares": 141,
+            "entry_price": 354.88,
+            "close_price": 349.21,
+            "total_value": 49238.61,
+            "pnl_pct": -1.6,
+            "pnl_usd": -799.47
+          },
+          {
+            "ticker": "XLV",
+            "shares": 268,
+            "entry_price": 187.83,
+            "close_price": 177.46,
+            "total_value": 47559.28,
+            "pnl_pct": -5.52,
+            "pnl_usd": -2779.16
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "AAPL [Trend 50%]",
+            "shares": 56,
+            "entry_price": 355.36,
+            "close_price": 349.21,
+            "total_value": 9777.88,
+            "pnl_pct": -1.73,
+            "pnl_usd": -172.2
+          },
+          {
+            "ticker": "AAPL [Rev 50%]",
+            "shares": 56,
+            "entry_price": 351.91,
+            "close_price": 349.21,
+            "total_value": 9777.88,
+            "pnl_pct": -0.77,
+            "pnl_usd": -75.6
+          },
+          {
+            "ticker": "XLE [Rev 50%]",
+            "shares": 315,
+            "entry_price": 63.36,
+            "close_price": 60.89,
+            "total_value": 9590.17,
+            "pnl_pct": -3.9,
+            "pnl_usd": -389.02
+          },
+          {
+            "ticker": "XLV [Rev 50%]",
+            "shares": 107,
+            "entry_price": 185.24,
+            "close_price": 177.46,
+            "total_value": 9494.11,
+            "pnl_pct": -4.2,
+            "pnl_usd": -416.23
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 349.21,
+            "total_value": 20254.18,
+            "pnl_pct": 2.19,
+            "pnl_usd": 433.24
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 145.98,
+            "total_value": 13284.18,
+            "pnl_pct": -32.8,
+            "pnl_usd": -6483.75
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 60.89,
+            "total_value": 18145.22,
+            "pnl_pct": -8.52,
+            "pnl_usd": -1689.66
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 335.18,
+            "total_value": 17094.18,
+            "pnl_pct": -12.42,
+            "pnl_usd": -2424.03
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 177.46,
+            "total_value": 19875.52,
+            "pnl_pct": 0.15,
+            "pnl_usd": 30.24
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 715.87,
+            "total_value": 92347.23,
+            "pnl_pct": -7.25,
+            "pnl_usd": -7213.68
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-11-20",
+      "equities": {
+        "trend_following": 97372.1,
+        "mean_reversion": 97798.36,
+        "vol_breakout": 100000.0,
+        "risk_parity": 89060.8,
+        "rel_momentum": 96635.44,
+        "ensemble_50_50": 97585.23,
+        "buy_and_hold": 86818.57,
+        "sp500": 89393.71
+      },
+      "daily_returns": {
+        "trend_following": -0.38,
+        "mean_reversion": -0.52,
+        "vol_breakout": 0.0,
+        "risk_parity": -2.53,
+        "rel_momentum": -1.02,
+        "ensemble_50_50": -0.45,
+        "buy_and_hold": -3.35,
+        "sp500": -3.62
+      },
+      "daily_fees": {
+        "trend_following": 0.0,
+        "mean_reversion": 0.0,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 0.0,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "AAPL",
+            "shares": 56,
+            "entry_price": 355.36,
+            "close_price": 342.56,
+            "total_value": 19183.36,
+            "pnl_pct": -3.6,
+            "pnl_usd": -716.8
+          }
+        ],
+        "mean_reversion": [
+          {
+            "ticker": "AAPL",
+            "shares": 56,
+            "entry_price": 351.91,
+            "close_price": 342.56,
+            "total_value": 19183.36,
+            "pnl_pct": -2.66,
+            "pnl_usd": -523.6
+          },
+          {
+            "ticker": "XLE",
+            "shares": 315,
+            "entry_price": 63.36,
+            "close_price": 60.51,
+            "total_value": 19060.65,
+            "pnl_pct": -4.5,
+            "pnl_usd": -897.75
+          },
+          {
+            "ticker": "XLV",
+            "shares": 107,
+            "entry_price": 185.24,
+            "close_price": 177.24,
+            "total_value": 18964.68,
+            "pnl_pct": -4.32,
+            "pnl_usd": -856.0
+          }
+        ],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 54,
+            "entry_price": 354.88,
+            "close_price": 342.56,
+            "total_value": 18498.24,
+            "pnl_pct": -3.47,
+            "pnl_usd": -665.28
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 48,
+            "entry_price": 166.19,
+            "close_price": 125.53,
+            "total_value": 6025.44,
+            "pnl_pct": -24.47,
+            "pnl_usd": -1951.68
+          },
+          {
+            "ticker": "XLE",
+            "shares": 295,
+            "entry_price": 64.33,
+            "close_price": 60.51,
+            "total_value": 17850.45,
+            "pnl_pct": -5.94,
+            "pnl_usd": -1126.9
+          },
+          {
+            "ticker": "GLD",
+            "shares": 67,
+            "entry_price": 354.89,
+            "close_price": 322.87,
+            "total_value": 21632.29,
+            "pnl_pct": -9.02,
+            "pnl_usd": -2145.34
+          },
+          {
+            "ticker": "XLV",
+            "shares": 137,
+            "entry_price": 187.83,
+            "close_price": 177.24,
+            "total_value": 24281.88,
+            "pnl_pct": -5.64,
+            "pnl_usd": -1450.83
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "AAPL",
+            "shares": 141,
+            "entry_price": 354.88,
+            "close_price": 342.56,
+            "total_value": 48300.96,
+            "pnl_pct": -3.47,
+            "pnl_usd": -1737.12
+          },
+          {
+            "ticker": "XLV",
+            "shares": 268,
+            "entry_price": 187.83,
+            "close_price": 177.24,
+            "total_value": 47500.32,
+            "pnl_pct": -5.64,
+            "pnl_usd": -2838.12
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "AAPL [Trend 50%]",
+            "shares": 56,
+            "entry_price": 355.36,
+            "close_price": 342.56,
+            "total_value": 9591.68,
+            "pnl_pct": -3.6,
+            "pnl_usd": -358.4
+          },
+          {
+            "ticker": "AAPL [Rev 50%]",
+            "shares": 56,
+            "entry_price": 351.91,
+            "close_price": 342.56,
+            "total_value": 9591.68,
+            "pnl_pct": -2.66,
+            "pnl_usd": -261.8
+          },
+          {
+            "ticker": "XLE [Rev 50%]",
+            "shares": 315,
+            "entry_price": 63.36,
+            "close_price": 60.51,
+            "total_value": 9530.33,
+            "pnl_pct": -4.5,
+            "pnl_usd": -448.88
+          },
+          {
+            "ticker": "XLV [Rev 50%]",
+            "shares": 107,
+            "entry_price": 185.24,
+            "close_price": 177.24,
+            "total_value": 9482.34,
+            "pnl_pct": -4.32,
+            "pnl_usd": -428.0
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 342.56,
+            "total_value": 19868.48,
+            "pnl_pct": 0.24,
+            "pnl_usd": 47.54
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 125.53,
+            "total_value": 11423.23,
+            "pnl_pct": -42.21,
+            "pnl_usd": -8344.7
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 60.51,
+            "total_value": 18031.98,
+            "pnl_pct": -9.09,
+            "pnl_usd": -1802.9
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 322.87,
+            "total_value": 16466.37,
+            "pnl_pct": -15.64,
+            "pnl_usd": -3051.84
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 177.24,
+            "total_value": 19850.88,
+            "pnl_pct": 0.03,
+            "pnl_usd": 5.6
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 689.81,
+            "total_value": 88985.49,
+            "pnl_pct": -10.62,
+            "pnl_usd": -10575.42
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-11-23",
+      "equities": {
+        "trend_following": 97737.22,
+        "mean_reversion": 98188.27,
+        "vol_breakout": 100000.0,
+        "risk_parity": 92099.75,
+        "rel_momentum": 98139.0,
+        "ensemble_50_50": 97962.75,
+        "buy_and_hold": 91364.14,
+        "sp500": 93583.63
+      },
+      "daily_returns": {
+        "trend_following": 0.37,
+        "mean_reversion": 0.4,
+        "vol_breakout": 0.0,
+        "risk_parity": 3.41,
+        "rel_momentum": 1.56,
+        "ensemble_50_50": 0.39,
+        "buy_and_hold": 5.24,
+        "sp500": 4.69
+      },
+      "daily_fees": {
+        "trend_following": 0.0,
+        "mean_reversion": 6.86,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 3.43,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "AAPL",
+            "shares": 56,
+            "entry_price": 355.36,
+            "close_price": 349.08,
+            "total_value": 19548.48,
+            "pnl_pct": -1.77,
+            "pnl_usd": -351.68
+          }
+        ],
+        "mean_reversion": [
+          {
+            "ticker": "XLE",
+            "shares": 315,
+            "entry_price": 63.36,
+            "close_price": 59.87,
+            "total_value": 18859.05,
+            "pnl_pct": -5.51,
+            "pnl_usd": -1099.35
+          },
+          {
+            "ticker": "XLV",
+            "shares": 107,
+            "entry_price": 185.24,
+            "close_price": 179.42,
+            "total_value": 19197.94,
+            "pnl_pct": -3.14,
+            "pnl_usd": -622.74
+          }
+        ],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 54,
+            "entry_price": 354.88,
+            "close_price": 349.08,
+            "total_value": 18850.32,
+            "pnl_pct": -1.63,
+            "pnl_usd": -313.2
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 48,
+            "entry_price": 166.19,
+            "close_price": 165.05,
+            "total_value": 7922.4,
+            "pnl_pct": -0.69,
+            "pnl_usd": -54.72
+          },
+          {
+            "ticker": "XLE",
+            "shares": 295,
+            "entry_price": 64.33,
+            "close_price": 59.87,
+            "total_value": 17661.65,
+            "pnl_pct": -6.93,
+            "pnl_usd": -1315.7
+          },
+          {
+            "ticker": "GLD",
+            "shares": 67,
+            "entry_price": 354.89,
+            "close_price": 333.02,
+            "total_value": 22312.34,
+            "pnl_pct": -6.16,
+            "pnl_usd": -1465.29
+          },
+          {
+            "ticker": "XLV",
+            "shares": 137,
+            "entry_price": 187.83,
+            "close_price": 179.42,
+            "total_value": 24580.54,
+            "pnl_pct": -4.48,
+            "pnl_usd": -1152.17
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "AAPL",
+            "shares": 141,
+            "entry_price": 354.88,
+            "close_price": 349.08,
+            "total_value": 49220.28,
+            "pnl_pct": -1.63,
+            "pnl_usd": -817.8
+          },
+          {
+            "ticker": "XLV",
+            "shares": 268,
+            "entry_price": 187.83,
+            "close_price": 179.42,
+            "total_value": 48084.56,
+            "pnl_pct": -4.48,
+            "pnl_usd": -2253.88
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "AAPL [Trend 50%]",
+            "shares": 56,
+            "entry_price": 355.36,
+            "close_price": 349.08,
+            "total_value": 9774.24,
+            "pnl_pct": -1.77,
+            "pnl_usd": -175.84
+          },
+          {
+            "ticker": "XLE [Rev 50%]",
+            "shares": 315,
+            "entry_price": 63.36,
+            "close_price": 59.87,
+            "total_value": 9429.52,
+            "pnl_pct": -5.51,
+            "pnl_usd": -549.67
+          },
+          {
+            "ticker": "XLV [Rev 50%]",
+            "shares": 107,
+            "entry_price": 185.24,
+            "close_price": 179.42,
+            "total_value": 9598.97,
+            "pnl_pct": -3.14,
+            "pnl_usd": -311.37
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 349.08,
+            "total_value": 20246.64,
+            "pnl_pct": 2.15,
+            "pnl_usd": 425.7
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 165.05,
+            "total_value": 15019.55,
+            "pnl_pct": -24.02,
+            "pnl_usd": -4748.38
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 59.87,
+            "total_value": 17841.26,
+            "pnl_pct": -10.05,
+            "pnl_usd": -1993.62
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 333.02,
+            "total_value": 16984.02,
+            "pnl_pct": -12.98,
+            "pnl_usd": -2534.19
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 179.42,
+            "total_value": 20095.04,
+            "pnl_pct": 1.26,
+            "pnl_usd": 249.76
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 722.29,
+            "total_value": 93175.41,
+            "pnl_pct": -6.41,
+            "pnl_usd": -6385.5
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-11-24",
+      "equities": {
+        "trend_following": 98016.66,
+        "mean_reversion": 98931.15,
+        "vol_breakout": 100000.0,
+        "risk_parity": 92295.06,
+        "rel_momentum": 100262.99,
+        "ensemble_50_50": 98473.9,
+        "buy_and_hold": 91153.96,
+        "sp500": 93130.85
+      },
+      "daily_returns": {
+        "trend_following": 0.29,
+        "mean_reversion": 0.76,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.21,
+        "rel_momentum": 2.16,
+        "ensemble_50_50": 0.52,
+        "buy_and_hold": -0.23,
+        "sp500": -0.48
+      },
+      "daily_fees": {
+        "trend_following": 0.0,
+        "mean_reversion": 6.93,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 3.46,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "AAPL",
+            "shares": 56,
+            "entry_price": 355.36,
+            "close_price": 354.07,
+            "total_value": 19827.92,
+            "pnl_pct": -0.36,
+            "pnl_usd": -72.24
+          }
+        ],
+        "mean_reversion": [
+          {
+            "ticker": "XLE",
+            "shares": 315,
+            "entry_price": 63.36,
+            "close_price": 60.45,
+            "total_value": 19041.75,
+            "pnl_pct": -4.59,
+            "pnl_usd": -916.65
+          }
+        ],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 54,
+            "entry_price": 354.88,
+            "close_price": 354.07,
+            "total_value": 19119.78,
+            "pnl_pct": -0.23,
+            "pnl_usd": -43.74
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 48,
+            "entry_price": 166.19,
+            "close_price": 155.38,
+            "total_value": 7458.24,
+            "pnl_pct": -6.5,
+            "pnl_usd": -518.88
+          },
+          {
+            "ticker": "XLE",
+            "shares": 295,
+            "entry_price": 64.33,
+            "close_price": 60.45,
+            "total_value": 17832.75,
+            "pnl_pct": -6.03,
+            "pnl_usd": -1144.6
+          },
+          {
+            "ticker": "GLD",
+            "shares": 67,
+            "entry_price": 354.89,
+            "close_price": 325.45,
+            "total_value": 21805.15,
+            "pnl_pct": -8.3,
+            "pnl_usd": -1972.48
+          },
+          {
+            "ticker": "XLV",
+            "shares": 137,
+            "entry_price": 187.83,
+            "close_price": 184.72,
+            "total_value": 25306.64,
+            "pnl_pct": -1.66,
+            "pnl_usd": -426.07
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "AAPL",
+            "shares": 141,
+            "entry_price": 354.88,
+            "close_price": 354.07,
+            "total_value": 49923.87,
+            "pnl_pct": -0.23,
+            "pnl_usd": -114.21
+          },
+          {
+            "ticker": "XLV",
+            "shares": 268,
+            "entry_price": 187.83,
+            "close_price": 184.72,
+            "total_value": 49504.96,
+            "pnl_pct": -1.66,
+            "pnl_usd": -833.48
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "AAPL [Trend 50%]",
+            "shares": 56,
+            "entry_price": 355.36,
+            "close_price": 354.07,
+            "total_value": 9913.96,
+            "pnl_pct": -0.36,
+            "pnl_usd": -36.12
+          },
+          {
+            "ticker": "XLE [Rev 50%]",
+            "shares": 315,
+            "entry_price": 63.36,
+            "close_price": 60.45,
+            "total_value": 9520.88,
+            "pnl_pct": -4.59,
+            "pnl_usd": -458.32
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 354.07,
+            "total_value": 20536.06,
+            "pnl_pct": 3.61,
+            "pnl_usd": 715.12
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 155.38,
+            "total_value": 14139.58,
+            "pnl_pct": -28.47,
+            "pnl_usd": -5628.35
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 60.45,
+            "total_value": 18014.1,
+            "pnl_pct": -9.18,
+            "pnl_usd": -1820.78
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 325.45,
+            "total_value": 16597.95,
+            "pnl_pct": -14.96,
+            "pnl_usd": -2920.26
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 184.72,
+            "total_value": 20688.64,
+            "pnl_pct": 4.25,
+            "pnl_usd": 843.36
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 718.78,
+            "total_value": 92722.62,
+            "pnl_pct": -6.87,
+            "pnl_usd": -6838.28
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "equities": {
+        "trend_following": 98101.22,
+        "mean_reversion": 99065.57,
+        "vol_breakout": 100000.0,
+        "risk_parity": 92209.03,
+        "rel_momentum": 100197.18,
+        "ensemble_50_50": 98583.39,
+        "buy_and_hold": 90807.88,
+        "sp500": 92862.52
+      },
+      "daily_returns": {
+        "trend_following": 0.09,
+        "mean_reversion": 0.14,
+        "vol_breakout": 0.0,
+        "risk_parity": -0.09,
+        "rel_momentum": -0.07,
+        "ensemble_50_50": 0.11,
+        "buy_and_hold": -0.38,
+        "sp500": -0.29
+      },
+      "daily_fees": {
+        "trend_following": 0.0,
+        "mean_reversion": 7.33,
+        "vol_breakout": 0.0,
+        "risk_parity": 0.0,
+        "rel_momentum": 0.0,
+        "ensemble_50_50": 3.67,
+        "buy_and_hold": 0.0,
+        "sp500": 0.0
+      },
+      "positions": {
+        "trend_following": [
+          {
+            "ticker": "AAPL",
+            "shares": 56,
+            "entry_price": 355.36,
+            "close_price": 355.58,
+            "total_value": 19912.48,
+            "pnl_pct": 0.06,
+            "pnl_usd": 12.32
+          }
+        ],
+        "mean_reversion": [],
+        "vol_breakout": [],
+        "risk_parity": [
+          {
+            "ticker": "AAPL",
+            "shares": 54,
+            "entry_price": 354.88,
+            "close_price": 355.58,
+            "total_value": 19201.32,
+            "pnl_pct": 0.2,
+            "pnl_usd": 37.8
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 48,
+            "entry_price": 166.19,
+            "close_price": 149.3,
+            "total_value": 7166.4,
+            "pnl_pct": -10.16,
+            "pnl_usd": -810.72
+          },
+          {
+            "ticker": "XLE",
+            "shares": 295,
+            "entry_price": 64.33,
+            "close_price": 60.9,
+            "total_value": 17965.5,
+            "pnl_pct": -5.33,
+            "pnl_usd": -1011.85
+          },
+          {
+            "ticker": "GLD",
+            "shares": 67,
+            "entry_price": 354.89,
+            "close_price": 327.45,
+            "total_value": 21939.15,
+            "pnl_pct": -7.73,
+            "pnl_usd": -1838.48
+          },
+          {
+            "ticker": "XLV",
+            "shares": 137,
+            "entry_price": 187.83,
+            "close_price": 183.68,
+            "total_value": 25164.16,
+            "pnl_pct": -2.21,
+            "pnl_usd": -568.55
+          }
+        ],
+        "rel_momentum": [
+          {
+            "ticker": "AAPL",
+            "shares": 141,
+            "entry_price": 354.88,
+            "close_price": 355.58,
+            "total_value": 50136.78,
+            "pnl_pct": 0.2,
+            "pnl_usd": 98.7
+          },
+          {
+            "ticker": "XLV",
+            "shares": 268,
+            "entry_price": 187.83,
+            "close_price": 183.68,
+            "total_value": 49226.24,
+            "pnl_pct": -2.21,
+            "pnl_usd": -1112.2
+          }
+        ],
+        "ensemble_50_50": [
+          {
+            "ticker": "AAPL [Trend 50%]",
+            "shares": 56,
+            "entry_price": 355.36,
+            "close_price": 355.58,
+            "total_value": 9956.24,
+            "pnl_pct": 0.06,
+            "pnl_usd": 6.16
+          }
+        ],
+        "buy_and_hold": [
+          {
+            "ticker": "AAPL",
+            "shares": 58,
+            "entry_price": 341.74,
+            "close_price": 355.58,
+            "total_value": 20623.64,
+            "pnl_pct": 4.05,
+            "pnl_usd": 802.7
+          },
+          {
+            "ticker": "NVDA",
+            "shares": 91,
+            "entry_price": 217.23,
+            "close_price": 149.3,
+            "total_value": 13586.3,
+            "pnl_pct": -31.27,
+            "pnl_usd": -6181.63
+          },
+          {
+            "ticker": "XLE",
+            "shares": 298,
+            "entry_price": 66.56,
+            "close_price": 60.9,
+            "total_value": 18148.2,
+            "pnl_pct": -8.5,
+            "pnl_usd": -1686.68
+          },
+          {
+            "ticker": "GLD",
+            "shares": 51,
+            "entry_price": 382.71,
+            "close_price": 327.45,
+            "total_value": 16699.95,
+            "pnl_pct": -14.44,
+            "pnl_usd": -2818.26
+          },
+          {
+            "ticker": "XLV",
+            "shares": 112,
+            "entry_price": 177.19,
+            "close_price": 183.68,
+            "total_value": 20572.16,
+            "pnl_pct": 3.66,
+            "pnl_usd": 726.88
+          }
+        ],
+        "sp500": [
+          {
+            "ticker": "SPY",
+            "shares": 129,
+            "entry_price": 771.79,
+            "close_price": 716.7,
+            "total_value": 92454.3,
+            "pnl_pct": -7.14,
+            "pnl_usd": -7106.61
+          }
+        ]
+      }
+    }
+  ]
+}
