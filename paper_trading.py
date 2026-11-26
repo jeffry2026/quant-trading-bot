@@ -79,18 +79,28 @@ def compute_indicators(df):
 
 
 def download_market_data():
-    """Scarica 420 giorni di calendario per avere SMA200 già attiva dal 15/10/2026."""
+    """Scarica 420 giorni e allinea tutti i titoli al calendario ufficiale di SPY."""
     all_tickers = TICKERS + [BENCHMARK_TICKER]
     start_fetch = (datetime.strptime(START_DATE, "%Y-%m-%d") - timedelta(days=420)).strftime("%Y-%m-%d")
     raw = yf.download(all_tickers, start=start_fetch, progress=False, group_by="ticker", auto_adjust=True)
+
+    # Estrae e normalizza prima il calendario ufficiale di SPY
+    spy_raw = raw[BENCHMARK_TICKER].copy()
+    if isinstance(spy_raw.columns, pd.MultiIndex):
+        spy_raw.columns = spy_raw.columns.get_level_values(-1)
+    spy_raw.index = pd.to_datetime(spy_raw.index).tz_localize(None).normalize()
+    spy_raw = spy_raw[~spy_raw.index.duplicated(keep="last")].dropna(subset=["Close"])
+    base_index = spy_raw.index
 
     data = {}
     for t in all_tickers:
         df = raw[t].copy()
         if isinstance(df.columns, pd.MultiIndex):
             df.columns = df.columns.get_level_values(-1)
-        df = df.dropna(subset=["Close", "High", "Low"]).copy()
-        df.index = pd.to_datetime(df.index).tz_localize(None)
+        df.index = pd.to_datetime(df.index).tz_localize(None).normalize()
+        df = df[~df.index.duplicated(keep="last")]
+        # Allinea esattamente alle date di SPY riempiendo eventuali singoli buchi
+        df = df.reindex(base_index).ffill().bfill()
         data[t] = compute_indicators(df)
     return data
 
@@ -159,9 +169,8 @@ def run_arena():
     print("[+] Scaricamento dati reali da Yahoo Finance...")
     data = download_market_data()
 
-    # Usa solo le sedute ufficiali di borsa aperta di Wall Street (SPY) dal 15/10/2026
     spy_df = data[BENCHMARK_TICKER]
-    trading_days = spy_df[spy_df.index >= START_DATE].index
+    trading_days = spy_df[spy_df.index >= pd.Timestamp(START_DATE)].index
 
     pfs = {
         "trend_following": init_portfolio(),
