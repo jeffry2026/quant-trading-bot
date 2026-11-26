@@ -1,4 +1,5 @@
 import json
+import time
 from datetime import datetime, timedelta
 import numpy as np
 import pandas as pd
@@ -30,7 +31,7 @@ STRATEGIES = {
 
 def calc_trade_cost(shares, price):
     """Calcola commissione broker + slippage stimato in dollari."""
-    if shares <= 0:
+    if shares <= 0 or pd.isna(price):
         return 0.0
     comm = max(MIN_COMMISSION, shares * COMM_PER_SHARE)
     slippage = (shares * price) * SLIPPAGE_PCT
@@ -78,29 +79,38 @@ def compute_indicators(df):
     return df
 
 
+def fetch_single_ticker(ticker, start_fetch, retries=3):
+    """Scarica un singolo ticker in modo sequenziale evitando lock su SQLite."""
+    for attempt in range(1, retries + 1):
+        try:
+            df = yf.Ticker(ticker).history(start=start_fetch, auto_adjust=True)
+            if df is not None and not df.empty and "Close" in df.columns:
+                df = df[["Open", "High", "Low", "Close", "Volume"]].copy()
+                df.index = pd.to_datetime(df.index).tz_localize(None).normalize()
+                df = df[~df.index.duplicated(keep="last")].dropna(subset=["Close"])
+                if not df.empty:
+                    return df
+        except Exception as exc:
+            print(f"[!] Tentativo {attempt}/{retries} fallito per {ticker}: {exc}")
+        time.sleep(1.5 * attempt)
+    raise RuntimeError(f"Impossibile scaricare i dati per {ticker} dopo {retries} tentativi.")
+
+
 def download_market_data():
     """Scarica 420 giorni e allinea tutti i titoli al calendario ufficiale di SPY."""
     all_tickers = TICKERS + [BENCHMARK_TICKER]
     start_fetch = (datetime.strptime(START_DATE, "%Y-%m-%d") - timedelta(days=420)).strftime("%Y-%m-%d")
-    raw = yf.download(all_tickers, start=start_fetch, progress=False, group_by="ticker", auto_adjust=True)
 
-    # Estrae e normalizza prima il calendario ufficiale di SPY
-    spy_raw = raw[BENCHMARK_TICKER].copy()
-    if isinstance(spy_raw.columns, pd.MultiIndex):
-        spy_raw.columns = spy_raw.columns.get_level_values(-1)
-    spy_raw.index = pd.to_datetime(spy_raw.index).tz_localize(None).normalize()
-    spy_raw = spy_raw[~spy_raw.index.duplicated(keep="last")].dropna(subset=["Close"])
-    base_index = spy_raw.index
+    raw_map = {}
+    for t in all_tickers:
+        print(f"    -> Scaricamento {t}...")
+        raw_map[t] = fetch_single_ticker(t, start_fetch)
+        time.sleep(0.4)
 
+    base_index = raw_map[BENCHMARK_TICKER].index
     data = {}
     for t in all_tickers:
-        df = raw[t].copy()
-        if isinstance(df.columns, pd.MultiIndex):
-            df.columns = df.columns.get_level_values(-1)
-        df.index = pd.to_datetime(df.index).tz_localize(None).normalize()
-        df = df[~df.index.duplicated(keep="last")]
-        # Allinea esattamente alle date di SPY riempiendo eventuali singoli buchi
-        df = df.reindex(base_index).ffill().bfill()
+        df = raw_map[t].reindex(base_index).ffill().bfill()
         data[t] = compute_indicators(df)
     return data
 
@@ -151,6 +161,8 @@ def execute_sell(pf, ticker, price):
 
 
 def execute_buy(pf, ticker, budget, price, extra_fields=None):
+    if pd.isna(price) or pd.isna(budget) or price <= 0 or budget <= 0:
+        return 0.0
     shares = int(budget // (price * (1 + SLIPPAGE_PCT) + COMM_PER_SHARE))
     if shares <= 0:
         return 0.0
