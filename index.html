@@ -1,119 +1,127 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard Quantitativa - Rendimenti & Posizioni</title>
-  <!-- Libreria Chart.js per il grafico -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quant Trading Arena — Multi-Strategy Dashboard</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: #0d1117;
-      color: #e6edf3;
-      margin: 0;
-      padding: 30px 15px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
     }
-    h1 { margin-bottom: 4px; font-size: 26px; }
-    .subtitle { color: #8b949e; margin-bottom: 25px; font-size: 14px; }
-    
-    .card {
-      background: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 10px;
-      padding: 20px;
-      max-width: 750px;
-      width: 100%;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-      margin-bottom: 25px;
-    }
-    .card-title {
-      font-size: 16px;
-      font-weight: 600;
-      color: #f0f6fc;
-      margin-bottom: 15px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background: var(--bg); color: var(--text); padding: 20px; max-width: 1240px; margin: 0 auto; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+    .header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+    h1, h2 { font-size: 1.15rem; font-weight: 600; }
+    .badge { background: #21262d; border: 1px solid var(--border); padding: 6px 12px; border-radius: 20px; font-size: 0.88rem; }
+    .chart-box { position: relative; height: 410px; width: 100%; }
 
-    /* Griglia Calendario */
-    .grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
-    .header-day { text-align: center; font-weight: 600; color: #8b949e; font-size: 13px; padding-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 0.9rem; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+    th { color: var(--muted); font-weight: 500; }
+    .pos { color: #3fb950; font-weight: 600; }
+    .neg { color: #f85149; font-weight: 600; }
+    .fee-pill { background: rgba(248, 81, 73, 0.16); color: #ffa198; padding: 3px 8px; border-radius: 6px; font-size: 0.84rem; font-weight: 600; }
+
+    .controls { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+    select, button {
+      background: #21262d; color: var(--text); border: 1px solid var(--border);
+      padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 0.9rem;
+    }
+    button:hover, select:hover { border-color: var(--accent); }
+    .month-nav { display: flex; align-items: center; gap: 10px; }
+    .month-title { font-weight: 600; min-width: 155px; text-align: center; text-transform: capitalize; }
+
+    .weekdays { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; text-align: center; color: var(--muted); font-size: 0.85rem; margin-bottom: 8px; }
+    .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
     .day-cell {
-      height: 65px;
-      background: #21262d;
-      border: 1px solid #30363d;
-      border-radius: 6px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      transition: transform 0.1s ease, border-color 0.15s ease;
+      background: #1c2128; border: 1px solid var(--border); border-radius: 8px;
+      padding: 10px 6px; text-align: center; min-height: 64px; display: flex; flex-direction: column; justify-content: center;
     }
-    .day-cell:hover { transform: scale(1.04); border-color: #58a6ff !important; }
-    .day-cell.selected { border: 2px solid #58a6ff !important; }
-    .empty-cell { height: 65px; }
-    .day-num { font-size: 13px; font-weight: bold; margin-bottom: 3px; }
-    .pnl-val { font-size: 11px; font-weight: 600; }
-    
-    .profit { background: #238636 !important; border-color: #2ea043 !important; color: #ffffff; }
-    .loss { background: #da3633 !important; border-color: #f85149 !important; color: #ffffff; }
-    .neutral { background: #21262d; color: #8b949e; }
-
-    /* Tabella Posizioni */
-    table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px; }
-    th, td { text-align: left; padding: 10px; border-bottom: 1px solid #30363d; }
-    th { color: #8b949e; font-weight: 600; }
-    .pnl-green { color: #3fb950; font-weight: bold; }
-    .pnl-red { color: #f85149; font-weight: bold; }
-
-    .summary-badge {
-      font-size: 13px;
-      background: #21262d;
-      padding: 4px 10px;
-      border-radius: 20px;
-      border: 1px solid #30363d;
-      color: #8b949e;
-    }
-    .summary-badge span { color: #f0f6fc; font-weight: bold; }
+    .day-cell.active { cursor: pointer; transition: transform 0.1s; }
+    .day-cell.active:hover { transform: scale(1.03); border-color: var(--accent); }
+    .day-cell.selected { outline: 2px solid var(--accent); }
+    .day-cell.green { background: rgba(35, 134, 54, 0.85); border-color: #2ea043; }
+    .day-cell.red { background: rgba(218, 54, 51, 0.85); border-color: #f85149; }
+    .day-num { font-weight: 700; font-size: 0.95rem; }
+    .day-ret { font-size: 0.8rem; margin-top: 4px; }
+    .empty { background: transparent; border: none; }
   </style>
 </head>
 <body>
 
-  <h1>Dashboard Quantitativa</h1>
-  <div class="subtitle" id="currentDateSub">Monitoraggio Strategia Trend-Following</div>
-
-  <!-- 1. GRAFICO RENDIMENTO -->
+  <!-- 1. GRAFICO MULTI-STRATEGIA -->
   <div class="card">
-    <div class="card-title">
-      <span>Andamento Capitale (Equity Curve)</span>
-      <div class="summary-badge" id="equityBadge">Capitale: <span>$100,000.00</span></div>
+    <div class="header">
+      <h1>Arena Quantitativa — Confronto Equity Curve ($100.000 dal 15 Ott 2026)</h1>
+      <span class="badge" id="lastUpdate">Ultimo dato borsa: -</span>
     </div>
-    <canvas id="equityChart" height="110"></canvas>
+    <div class="chart-box">
+      <canvas id="arenaChart"></canvas>
+    </div>
   </div>
 
-  <!-- 2. CALENDARIO MENSILE -->
+  <!-- 2. CLASSIFICA LORDO VS NETTO & PESO COMMISSIONI -->
   <div class="card">
-    <div class="card-title">
-      <span id="calendarTitle">Calendario Rendimenti</span>
-      <span style="font-size: 12px; color: #8b949e;">Clicca su un giorno per vedere i titoli</span>
+    <div class="header">
+      <h2>Classifica Performance & Peso Reale delle Commissioni</h2>
+      <span class="badge">Tariffa Broker: $0.005/azione (min $1.00) + 0.03% slippage</span>
     </div>
-    <div class="grid" id="calendarGrid"></div>
+    <div style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Algoritmo / Benchmark</th>
+            <th>Capitale Lordo (Senza Spese)</th>
+            <th>Capitale Netto (Reale)</th>
+            <th>Rendimento Netto</th>
+            <th>N° Eseguiti</th>
+            <th>Commissioni Pagate</th>
+            <th>Peso Commissioni</th>
+          </tr>
+        </thead>
+        <tbody id="summaryBody"></tbody>
+      </table>
+    </div>
   </div>
 
-  <!-- 3. DETTAGLIO TITOLI INVESTITI PER QUEL GIORNO -->
+  <!-- 3. CALENDARIO NAVIGABILE PER MESE E STRATEGIA -->
   <div class="card">
-    <div class="card-title">
-      <span id="detailTitle">Posizioni del Giorno</span>
-      <div class="summary-badge" id="dayPnlBadge">PnL: <span>0.00%</span></div>
+    <div class="controls">
+      <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+        <h2>Calendario Rendimenti:</h2>
+        <select id="strategySelect"></select>
+      </div>
+      <div class="month-nav">
+        <button id="prevMonthBtn">◀ Mese Prec.</button>
+        <span class="month-title" id="monthLabel">-</span>
+        <button id="nextMonthBtn">Mese Succ. ▶</button>
+      </div>
     </div>
-    <div id="positionsContainer">
-      <table id="positionsTable">
+
+    <div class="weekdays">
+      <div>Lun</div><div>Mar</div><div>Mer</div><div>Gio</div><div>Ven</div><div>Sab</div><div>Dom</div>
+    </div>
+    <div class="calendar-grid" id="calendarGrid"></div>
+  </div>
+
+  <!-- 4. DETTAGLIO POSIZIONI DEL GIORNO SELEZIONATO -->
+  <div class="card">
+    <div class="header">
+      <h2 id="positionsHeader">Posizioni del giorno selezionato</h2>
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <span class="badge" id="dayFeeBadge">Commissioni Giorno: -</span>
+        <span class="badge" id="dayPnlBadge">PnL Giornaliero: -</span>
+      </div>
+    </div>
+    <div style="overflow-x:auto;">
+      <table>
         <thead>
           <tr>
             <th>Ticker</th>
@@ -124,187 +132,251 @@
             <th>Rendimento</th>
           </tr>
         </thead>
-        <tbody id="positionsBody">
-          <tr><td colspan="6" style="text-align: center; color: #8b949e;">Seleziona un giorno per visualizzare i dettagli.</td></tr>
-        </tbody>
+        <tbody id="positionsBody"></tbody>
       </table>
     </div>
   </div>
 
   <script>
-    let globalHistory = {};
-    let equityChartInstance = null;
+    const STRATEGY_COLORS = {
+      trend_following: { border: "#58a6ff", dash: [] },
+      mean_reversion:  { border: "#bc8cff", dash: [] },
+      vol_breakout:    { border: "#f0883e", dash: [] },
+      risk_parity:     { border: "#3fb950", dash: [] },
+      rel_momentum:    { border: "#39c5cf", dash: [] },
+      ensemble_50_50:  { border: "#ff7b72", dash: [] },
+      buy_and_hold:    { border: "#d29922", dash: [4, 4] },
+      sp500:           { border: "#8b949e", dash: [6, 4] }
+    };
 
-    async function initDashboard() {
-      try {
-        const response = await fetch('daily_history.json?nocache=' + new Date().getTime());
-        if (response.ok) {
-          globalHistory = await response.json();
-        }
-      } catch (e) {
-        console.log("File storico non ancora disponibile");
-      }
+    let arenaData = null;
+    let selectedStrategy = "trend_following";
+    let currentYear = 2026;
+    let currentMonth = 10;
+    let selectedDate = null;
 
-      setupCalendar();
-      setupChart();
+    async function init() {
+      const res = await fetch("arena_history.json?v=" + Date.now());
+      arenaData = await res.json();
 
-      // Seleziona in automatico l'ultimo giorno registrato se presente
-      const dates = Object.keys(globalHistory).sort();
-      if (dates.length > 0) {
-        showDayDetails(dates[dates.length - 1]);
-      }
+      document.getElementById("lastUpdate").textContent = "Ultimo dato borsa: " + arenaData.last_updated;
+
+      const lastParts = arenaData.last_updated.split("-");
+      currentYear = parseInt(lastParts[0], 10);
+      currentMonth = parseInt(lastParts[1], 10) - 1;
+      selectedDate = arenaData.last_updated;
+
+      populateStrategySelector();
+      renderChart();
+      renderSummaryTable();
+      renderCalendar();
+      renderPositions(selectedDate);
     }
 
-    function setupCalendar() {
-      const now = new Date();
-      const months = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
-      document.getElementById('calendarTitle').innerText = `Calendario Rendimenti - ${months[now.getMonth()]} ${now.getFullYear()}`;
+    function populateStrategySelector() {
+      const sel = document.getElementById("strategySelect");
+      sel.innerHTML = "";
+      for (const [key, name] of Object.entries(arenaData.strategies_meta)) {
+        const opt = document.createElement("option");
+        opt.value = key;
+        opt.textContent = name;
+        sel.appendChild(opt);
+      }
+      sel.value = selectedStrategy;
+      sel.addEventListener("change", (e) => {
+        selectedStrategy = e.target.value;
+        renderCalendar();
+        if (selectedDate) renderPositions(selectedDate);
+      });
+    }
 
-      const grid = document.getElementById('calendarGrid');
-      grid.innerHTML = '';
-      
-      const dayNames = ["Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"];
-      dayNames.forEach(d => {
-        const div = document.createElement('div');
-        div.className = 'header-day';
-        div.innerText = d;
-        grid.appendChild(div);
+    function renderChart() {
+      const ctx = document.getElementById("arenaChart").getContext("2d");
+      const labels = arenaData.history.map(d => d.date);
+
+      const datasets = Object.entries(arenaData.strategies_meta).map(([key, label]) => {
+        const cfg = STRATEGY_COLORS[key] || { border: "#ffffff", dash: [] };
+        return {
+          label: label,
+          data: arenaData.history.map(d => d.equities[key]),
+          borderColor: cfg.border,
+          backgroundColor: cfg.border,
+          borderDash: cfg.dash,
+          borderWidth: key === "ensemble_50_50" ? 3 : 2,
+          hoverBorderWidth: 5,
+          pointRadius: 2,
+          pointHoverRadius: 7,
+          tension: 0.15
+        };
       });
 
-      const year = now.getFullYear();
-      const month = now.getMonth();
-      const firstDayIndex = new Date(year, month, 1).getDay();
-      const daysOffset = (firstDayIndex === 0 ? 6 : firstDayIndex - 1);
-      const totalDays = new Date(year, month + 1, 0).getDate();
-
-      for (let i = 0; i < daysOffset; i++) {
-        const empty = document.createElement('div');
-        empty.className = 'empty-cell';
-        grid.appendChild(empty);
-      }
-
-      for (let day = 1; day <= totalDays; day++) {
-        const dayStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-        const cell = document.createElement('div');
-        cell.className = 'day-cell';
-        cell.id = `cell-${dayStr}`;
-
-        let pnlText = "-";
-        if (globalHistory[dayStr]) {
-          const ret = globalHistory[dayStr].return_pct;
-          pnlText = (ret >= 0 ? "+" : "") + ret.toFixed(2) + "%";
-          cell.classList.add(ret >= 0 ? 'profit' : 'loss');
-        } else {
-          cell.classList.add('neutral');
-        }
-
-        cell.innerHTML = `
-          <div class="day-num">${day}</div>
-          <div class="pnl-val">${pnlText}</div>
-        `;
-
-        cell.onclick = () => {
-          document.querySelectorAll('.day-cell').forEach(c => c.classList.remove('selected'));
-          cell.classList.add('selected');
-          showDayDetails(dayStr);
-        };
-
-        grid.appendChild(cell);
-      }
-    }
-
-    function setupChart() {
-      const dates = Object.keys(globalHistory).sort();
-      const labels = dates.length > 0 ? dates : ["Inizio"];
-      const values = dates.length > 0 ? dates.map(d => globalHistory[d].equity) : [100000];
-
-      if (dates.length > 0) {
-        const lastEquity = values[values.length - 1];
-        document.getElementById('equityBadge').innerHTML = `Capitale: <span>$${lastEquity.toLocaleString('en-US', {minimumFractionDigits: 2})}</span>`;
-      }
-
-      const ctx = document.getElementById('equityChart').getContext('2d');
-      if (equityChartInstance) equityChartInstance.destroy();
-
-      equityChartInstance = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: labels,
-          datasets: [{
-            label: 'Valore Portafoglio ($)',
-            data: values,
-            borderColor: '#58a6ff',
-            backgroundColor: 'rgba(88, 166, 255, 0.1)',
-            fill: true,
-            tension: 0.25,
-            pointRadius: 4,
-            pointHoverRadius: 6,
-            borderWidth: 2
-          }]
-        },
+      new Chart(ctx, {
+        type: "line",
+        data: { labels, datasets },
         options: {
           responsive: true,
+          maintainAspectRatio: false,
+          interaction: {
+            mode: "nearest",
+            axis: "xy",
+            intersect: false
+          },
           plugins: {
-            legend: { display: false },
+            legend: {
+              labels: { color: "#e6edf3", usePointStyle: true, padding: 14 }
+            },
             tooltip: {
+              backgroundColor: "#161b22",
+              titleColor: "#e6edf3",
+              bodyColor: "#e6edf3",
+              borderColor: "#58a6ff",
+              borderWidth: 1,
+              padding: 12,
               callbacks: {
-                label: (ctx) => ` $${ctx.parsed.y.toLocaleString('en-US', {minimumFractionDigits: 2})}`
+                label: function(context) {
+                  const val = context.parsed.y;
+                  const pct = (((val - 100000) / 100000) * 100).toFixed(2);
+                  const sign = pct >= 0 ? "+" : "";
+                  return ` ${context.dataset.label}: $${val.toLocaleString("en-US", {minimumFractionDigits: 2})} (${sign}${pct}%)`;
+                }
               }
             }
           },
           scales: {
-            x: {
-              grid: { color: '#21262d' },
-              ticks: { color: '#8b949e', font: { size: 11 } }
-            },
+            x: { ticks: { color: "#8b949e" }, grid: { color: "rgba(48,54,61,0.4)" } },
             y: {
-              grid: { color: '#21262d' },
               ticks: {
-                color: '#8b949e',
-                font: { size: 11 },
-                callback: (val) => '$' + val.toLocaleString()
-              }
+                color: "#8b949e",
+                callback: v => "$" + v.toLocaleString("en-US")
+              },
+              grid: { color: "rgba(48,54,61,0.4)" }
             }
           }
         }
       });
     }
 
-    function showDayDetails(dateStr) {
-      const dayData = globalHistory[dateStr];
-      const tbody = document.getElementById('positionsBody');
-      const title = document.getElementById('detailTitle');
-      const badge = document.getElementById('dayPnlBadge');
+    function renderSummaryTable() {
+      const tbody = document.getElementById("summaryBody");
+      tbody.innerHTML = "";
+      const rows = Object.values(arenaData.summary).sort((a, b) => b.final_equity - a.final_equity);
 
-      title.innerText = `Posizioni del ${dateStr}`;
+      rows.forEach(s => {
+        const cls = s.total_return_pct >= 0 ? "pos" : "neg";
+        const sign = s.total_return_pct >= 0 ? "+" : "";
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td><strong>${s.name}</strong></td>
+          <td style="color:var(--muted);">$${s.gross_equity.toLocaleString("en-US", {minimumFractionDigits: 2})}</td>
+          <td><strong>$${s.final_equity.toLocaleString("en-US", {minimumFractionDigits: 2})}</strong></td>
+          <td class="${cls}">${sign}${s.total_return_pct.toFixed(2)}%</td>
+          <td>${s.trades_count}</td>
+          <td><span class="fee-pill">-$${s.total_fees_usd.toFixed(2)}</span></td>
+          <td>-${s.fee_impact_pct.toFixed(3)}% del capitale</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
 
-      if (!dayData || !dayData.positions || dayData.positions.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: #8b949e;">Nessun dato registrato per questa data.</td></tr>`;
-        badge.innerHTML = `PnL: <span>-</span>`;
+    function renderCalendar() {
+      const grid = document.getElementById("calendarGrid");
+      grid.innerHTML = "";
+
+      const monthDate = new Date(currentYear, currentMonth, 1);
+      document.getElementById("monthLabel").textContent = monthDate.toLocaleDateString("it-IT", { month: "long", year: "numeric" });
+
+      const dayMap = {};
+      arenaData.history.forEach(d => { dayMap[d.date] = d; });
+
+      let startDay = monthDate.getDay() - 1;
+      if (startDay < 0) startDay = 6;
+      const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+      for (let i = 0; i < startDay; i++) {
+        const empty = document.createElement("div");
+        empty.className = "day-cell empty";
+        grid.appendChild(empty);
+      }
+
+      for (let d = 1; d <= daysInMonth; d++) {
+        const mm = String(currentMonth + 1).padStart(2, "0");
+        const dd = String(d).padStart(2, "0");
+        const dateStr = `${currentYear}-${mm}-${dd}`;
+        const rec = dayMap[dateStr];
+
+        const cell = document.createElement("div");
+        cell.className = "day-cell";
+
+        if (rec) {
+          const ret = rec.daily_returns[selectedStrategy];
+          cell.classList.add("active");
+          cell.classList.add(ret >= 0 ? "green" : "red");
+          if (dateStr === selectedDate) cell.classList.add("selected");
+
+          const sign = ret >= 0 ? "+" : "";
+          cell.innerHTML = `<div class="day-num">${d}</div><div class="day-ret">${sign}${ret.toFixed(2)}%</div>`;
+          cell.addEventListener("click", () => {
+            selectedDate = dateStr;
+            renderCalendar();
+            renderPositions(dateStr);
+          });
+        } else {
+          cell.innerHTML = `<div class="day-num">${d}</div><div class="day-ret">-</div>`;
+        }
+        grid.appendChild(cell);
+      }
+    }
+
+    function renderPositions(dateStr) {
+      const rec = arenaData.history.find(d => d.date === dateStr);
+      const tbody = document.getElementById("positionsBody");
+      tbody.innerHTML = "";
+      if (!rec) return;
+
+      const stratName = arenaData.strategies_meta[selectedStrategy];
+      const ret = rec.daily_returns[selectedStrategy];
+      const feeDay = rec.daily_fees ? rec.daily_fees[selectedStrategy] : 0;
+      const sign = ret >= 0 ? "+" : "";
+
+      document.getElementById("positionsHeader").textContent = `Posizioni del ${dateStr} — ${stratName}`;
+      document.getElementById("dayFeeBadge").textContent = `Commissioni Giorno: -$${feeDay.toFixed(2)}`;
+      document.getElementById("dayPnlBadge").textContent = `PnL Giornaliero: ${sign}${ret.toFixed(2)}%`;
+
+      const posList = rec.positions[selectedStrategy] || [];
+      if (posList.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" style="color:var(--muted); text-align:center;">100% Liquidità (Nessuna posizione aperta in questa data)</td></tr>`;
         return;
       }
 
-      const ret = dayData.return_pct;
-      const sign = ret >= 0 ? "+" : "";
-      badge.innerHTML = `PnL Giornaliero: <span style="color: ${ret >= 0 ? '#3fb950' : '#f85149'}">${sign}${ret.toFixed(2)}%</span>`;
-
-      tbody.innerHTML = dayData.positions.map(p => {
-        const pnlColorClass = p.pnl_pct >= 0 ? 'pnl-green' : 'pnl-red';
-        const pnlSign = p.pnl_pct >= 0 ? '+' : '';
-        return `
-          <tr>
-            <td><strong>${p.ticker}</strong></td>
-            <td>${p.shares}</td>
-            <td>$${p.entry_price.toFixed(2)}</td>
-            <td>$${p.current_price.toFixed(2)}</td>
-            <td>$${p.total_value.toLocaleString('en-US', {minimumFractionDigits: 2})}</td>
-            <td class="${pnlColorClass}">${pnlSign}${p.pnl_pct.toFixed(2)}% (${pnlSign}$${p.pnl_usd.toFixed(2)})</td>
-          </tr>
+      posList.forEach(p => {
+        const cls = p.pnl_pct >= 0 ? "pos" : "neg";
+        const pSign = p.pnl_pct >= 0 ? "+" : "";
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td><strong>${p.ticker}</strong></td>
+          <td>${p.shares}</td>
+          <td>$${p.entry_price.toFixed(2)}</td>
+          <td>$${p.close_price.toFixed(2)}</td>
+          <td>$${p.total_value.toLocaleString("en-US", {minimumFractionDigits: 2})}</td>
+          <td class="${cls}">${pSign}${p.pnl_pct.toFixed(2)}% (${pSign}$${p.pnl_usd.toFixed(2)})</td>
         `;
-      }).join('');
+        tbody.appendChild(tr);
+      });
     }
 
-    initDashboard();
+    document.getElementById("prevMonthBtn").addEventListener("click", () => {
+      currentMonth--;
+      if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+      renderCalendar();
+    });
+
+    document.getElementById("nextMonthBtn").addEventListener("click", () => {
+      currentMonth++;
+      if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+      renderCalendar();
+    });
+
+    init();
   </script>
 </body>
 </html>
