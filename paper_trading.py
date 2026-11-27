@@ -9,7 +9,7 @@ import yfinance as yf
 TICKERS = ["AAPL", "NVDA", "XLE", "GLD", "XLV"]
 BENCHMARK_TICKER = "SPY"
 INITIAL_CAPITAL = 100000.0
-START_DATE = "2026-10-15"
+START_DATE = "2018-01-01"
 HISTORY_FILE = "arena_history.json"
 
 # --- MODELLO COMMISSIONI & SLIPPAGE ---
